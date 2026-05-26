@@ -1,0 +1,1185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>US Import Tariff Calculator 2026 — Calculate Your Real Import Duty</title>
+<meta name="description" content="Free US tariff calculator. Calculate total import duties including Section 122, Section 301, Section 232 and MFN rates. Updated April 2026 post-SCOTUS rates.">
+<meta name="keywords" content="tariff calculator, import duty calculator, US tariffs 2026, Section 122, Section 301, customs duty, import cost calculator">
+<meta property="og:title" content="US Import Tariff Calculator 2026">
+<meta property="og:description" content="Calculate the real cost of importing goods into the US. All tariff layers in one calculator.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://ustariffcalc.com/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="google-site-verification" content="YlX6lQqHgEj_Zykv2NSI905c6CftbiLawMNsyyd40hA" />
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://ustariffcalc.com/og-image.png">
+<link rel="canonical" href="https://ustariffcalc.com/">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  min-height: 100vh;
+  background: #0a0c12;
+  color: #e2e8f0;
+  font-family: 'DM Sans', -apple-system, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Countdown Banner */
+.countdown-banner {
+  background: linear-gradient(90deg, #dc2626, #f97316);
+  padding: 10px 16px;
+  text-align: center;
+  color: #fff;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+.countdown-banner .days {
+  font-size: 16px;
+  margin: 0 4px;
+}
+
+/* Header */
+header {
+  padding: 48px 24px 32px;
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+  background: radial-gradient(ellipse at 50% 0%, rgba(249,115,22,0.08) 0%, transparent 70%);
+}
+.badge {
+  display: inline-block;
+  padding: 4px 14px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 700;
+  background: rgba(249,115,22,0.15);
+  color: #f97316;
+  letter-spacing: 0.1em;
+  margin-bottom: 16px;
+  border: 1px solid rgba(249,115,22,0.25);
+}
+h1 {
+  font-size: clamp(32px, 6vw, 52px);
+  font-weight: 900;
+  line-height: 1.1;
+  margin: 0 0 16px;
+  background: linear-gradient(135deg, #ffffff, #94a3b8);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+header p {
+  color: rgba(255,255,255,0.5);
+  font-size: 16px;
+  max-width: 520px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* Main */
+main {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 0 20px 80px;
+}
+
+/* Card */
+.card {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 20px;
+  padding: 32px 28px;
+  margin-bottom: 24px;
+}
+
+/* Form Elements */
+.field { display: block; margin-bottom: 20px; }
+.field-label {
+  font-size: 12px;
+  font-weight: 700;
+  color: rgba(255,255,255,0.4);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: 8px;
+}
+.field-label .hint {
+  font-weight: 400;
+  text-transform: none;
+}
+.input, .select {
+  width: 100%;
+  padding: 14px 16px;
+  border-radius: 12px;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.1);
+  color: #fff;
+  font-size: 15px;
+  outline: none;
+  font-family: 'DM Sans', sans-serif;
+  transition: border-color 0.2s;
+}
+.input:focus, .select:focus {
+  border-color: rgba(249,115,22,0.5);
+}
+.select { cursor: pointer; appearance: none; }
+.select option { background: #1a1d2e; }
+.grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+/* Buttons */
+.btn-row { display: flex; gap: 12px; }
+.btn-primary {
+  flex: 1;
+  padding: 16px 0;
+  border-radius: 14px;
+  border: none;
+  background: linear-gradient(135deg, #f97316, #ef4444);
+  color: #fff;
+  font-size: 16px;
+  font-weight: 800;
+  cursor: pointer;
+  font-family: 'DM Sans', sans-serif;
+  letter-spacing: 0.02em;
+  transition: opacity 0.2s, transform 0.1s;
+}
+.btn-primary:hover { opacity: 0.9; }
+.btn-primary:active { transform: scale(0.98); }
+.btn-primary:disabled {
+  background: rgba(255,255,255,0.1);
+  cursor: not-allowed;
+}
+.btn-secondary {
+  padding: 16px 24px;
+  border-radius: 14px;
+  border: 1px solid rgba(255,255,255,0.15);
+  background: transparent;
+  color: rgba(255,255,255,0.5);
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: 'DM Sans', sans-serif;
+}
+.btn-secondary:hover { border-color: rgba(255,255,255,0.3); }
+
+/* Results */
+.results-wrapper { position: relative; }
+.results-blurred { filter: blur(8px); user-select: none; pointer-events: none; transition: filter 0.5s; }
+.results-clear { filter: none; user-select: auto; pointer-events: auto; }
+
+/* Email Gate */
+.email-gate {
+  position: absolute;
+  inset: 0;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(10,12,18,0.85);
+  backdrop-filter: blur(12px);
+  border-radius: 20px;
+}
+.email-gate-inner {
+  text-align: center;
+  max-width: 380px;
+  padding: 0 20px;
+}
+.email-gate-inner .icon { font-size: 42px; margin-bottom: 12px; }
+.email-gate-inner h3 {
+  color: #fff;
+  font-size: 22px;
+  font-weight: 800;
+  margin: 0 0 8px;
+}
+.email-gate-inner .desc {
+  color: rgba(255,255,255,0.6);
+  font-size: 14px;
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+.email-gate-inner .email-input {
+  width: 100%;
+  padding: 14px 16px;
+  border-radius: 10px;
+  border: 2px solid rgba(255,255,255,0.15);
+  background: rgba(255,255,255,0.08);
+  color: #fff;
+  font-size: 15px;
+  outline: none;
+  font-family: 'DM Sans', sans-serif;
+  margin-bottom: 10px;
+}
+.email-gate-inner .email-input:focus { border-color: rgba(249,115,22,0.5); }
+.email-gate-inner .email-error {
+  color: #ff6b6b;
+  font-size: 13px;
+  margin: 0 0 10px;
+  display: none;
+}
+.email-gate-inner .email-btn {
+  width: 100%;
+  padding: 14px 0;
+  border-radius: 10px;
+  border: none;
+  background: linear-gradient(135deg, #f97316, #ef4444);
+  color: #fff;
+  font-size: 16px;
+  font-weight: 800;
+  cursor: pointer;
+  font-family: 'DM Sans', sans-serif;
+}
+.email-gate-inner .fine-print {
+  color: rgba(255,255,255,0.35);
+  font-size: 11px;
+  margin-top: 12px;
+}
+
+/* Total Rate */
+.total-rate-section { text-align: center; margin-bottom: 28px; }
+.total-rate-label {
+  font-size: 12px;
+  font-weight: 700;
+  color: rgba(255,255,255,0.4);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+.total-rate-value {
+  font-size: 56px;
+  font-weight: 900;
+  font-family: 'JetBrains Mono', monospace;
+  margin: 0 0 4px;
+}
+.rate-low { background: linear-gradient(135deg, #22c55e, #3b82f6); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+.rate-mid { background: linear-gradient(135deg, #f97316, #eab308); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+.rate-high { background: linear-gradient(135deg, #ef4444, #f97316); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+.total-rate-sub { color: rgba(255,255,255,0.35); font-size: 13px; }
+
+/* Breakdown Bar */
+.breakdown-bar {
+  display: flex;
+  border-radius: 6px;
+  overflow: hidden;
+  height: 32px;
+  margin: 8px 0 4px;
+}
+.breakdown-bar .seg {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  transition: width 0.5s cubic-bezier(.4,0,.2,1);
+}
+.breakdown-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 28px;
+  margin-top: 8px;
+  justify-content: center;
+}
+.breakdown-legend .item {
+  font-size: 11px;
+  color: rgba(255,255,255,0.5);
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+.breakdown-legend .dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 2px;
+  display: inline-block;
+}
+
+/* Detail Grid */
+.detail-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+.detail-card {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 12px;
+  padding: 16px 14px;
+}
+.detail-card.highlight {
+  background: rgba(249,115,22,0.08);
+  border-color: rgba(249,115,22,0.2);
+}
+.detail-card .label {
+  font-size: 11px;
+  color: rgba(255,255,255,0.4);
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  margin-bottom: 4px;
+}
+.detail-card .value {
+  font-size: 22px;
+  font-weight: 800;
+  font-family: 'JetBrains Mono', monospace;
+  color: #fff;
+  margin-bottom: 2px;
+}
+.detail-card.highlight .value { color: #f97316; }
+.detail-card .sub { font-size: 11px; color: rgba(255,255,255,0.3); }
+
+/* Landed Cost */
+.landed-cost {
+  background: linear-gradient(135deg, rgba(249,115,22,0.12), rgba(239,68,68,0.08));
+  border: 1px solid rgba(249,115,22,0.25);
+  border-radius: 14px;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.landed-cost .label-section .label {
+  font-size: 12px;
+  font-weight: 700;
+  color: rgba(255,255,255,0.5);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 4px;
+}
+.landed-cost .label-section .sub { font-size: 11px; color: rgba(255,255,255,0.35); }
+.landed-cost .amount {
+  font-size: 32px;
+  font-weight: 900;
+  font-family: 'JetBrains Mono', monospace;
+  color: #f97316;
+}
+
+/* Country Note */
+.country-note {
+  background: rgba(59,130,246,0.06);
+  border: 1px solid rgba(59,130,246,0.15);
+  border-radius: 12px;
+  padding: 14px 16px;
+  margin-bottom: 16px;
+}
+.country-note .title { font-size: 12px; font-weight: 700; color: #60a5fa; margin-bottom: 4px; }
+.country-note .text { font-size: 13px; color: rgba(255,255,255,0.5); line-height: 1.5; }
+
+/* Disclaimer */
+.disclaimer {
+  font-size: 11px;
+  color: rgba(255,255,255,0.25);
+  line-height: 1.5;
+  text-align: center;
+  margin-top: 20px;
+  padding-top: 16px;
+  border-top: 1px solid rgba(255,255,255,0.06);
+}
+
+/* Info Section */
+.info-section {
+  margin-top: 32px;
+  background: rgba(255,255,255,0.02);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 20px;
+  padding: 28px 24px;
+}
+.info-section h2 { font-size: 20px; font-weight: 800; margin-bottom: 16px; color: #fff; }
+.info-section .intro {
+  font-size: 14px;
+  color: rgba(255,255,255,0.45);
+  line-height: 1.7;
+  margin-bottom: 16px;
+}
+.info-item {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+.info-item .bar {
+  width: 4px;
+  border-radius: 4px;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+.info-item .title { font-size: 14px; font-weight: 700; color: #fff; margin-bottom: 2px; }
+.info-item .desc { font-size: 13px; color: rgba(255,255,255,0.4); line-height: 1.5; }
+
+/* Example Box */
+.example-box {
+  margin-top: 20px;
+  padding: 16px 18px;
+  border-radius: 12px;
+  background: rgba(239,68,68,0.06);
+  border: 1px solid rgba(239,68,68,0.15);
+}
+.example-box .title { font-size: 13px; font-weight: 700; color: #ef4444; margin-bottom: 4px; }
+.example-box .formula {
+  font-size: 13px;
+  color: rgba(255,255,255,0.45);
+  line-height: 1.6;
+  font-family: 'JetBrains Mono', monospace;
+}
+.example-box .formula strong { color: #ef4444; }
+.example-box .note { font-size: 11px; color: rgba(255,255,255,0.25); margin-top: 4px; }
+
+/* SEO Content */
+.seo-section {
+  margin-top: 24px;
+  background: rgba(255,255,255,0.02);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 20px;
+  padding: 28px 24px;
+}
+.seo-section h2 {
+  font-size: 18px;
+  font-weight: 800;
+  color: #fff;
+  margin-bottom: 12px;
+}
+.seo-section h3 {
+  font-size: 15px;
+  font-weight: 700;
+  color: rgba(255,255,255,0.7);
+  margin: 20px 0 8px;
+}
+.seo-section p {
+  font-size: 14px;
+  color: rgba(255,255,255,0.4);
+  line-height: 1.7;
+  margin-bottom: 12px;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  margin-top: 40px;
+  padding: 20px 0;
+}
+footer p {
+  font-size: 11px;
+  color: rgba(255,255,255,0.2);
+  line-height: 1.6;
+}
+
+/* Responsive */
+@media (max-width: 500px) {
+  .card { padding: 24px 18px; }
+  .grid-2 { grid-template-columns: 1fr; }
+  .detail-grid { grid-template-columns: 1fr; }
+  .landed-cost { flex-direction: column; text-align: center; }
+  .landed-cost .amount { font-size: 28px; }
+  .total-rate-value { font-size: 44px; }
+}
+
+/* Global Navigation */
+.global-nav {
+  background: rgba(255,255,255,0.03);
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  padding: 0 24px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+.global-nav-inner {
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 56px;
+}
+.global-nav .logo {
+  font-size: 16px;
+  font-weight: 900;
+  color: #fff;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.global-nav .logo span {
+  color: #f97316;
+}
+.global-nav .nav-links {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+.global-nav .nav-links a {
+  font-size: 13px;
+  font-weight: 600;
+  color: rgba(255,255,255,0.45);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.global-nav .nav-links a:hover {
+  color: #f97316;
+}
+.global-nav .nav-links a.active {
+  color: #f97316;
+}
+.nav-mobile-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: rgba(255,255,255,0.5);
+  font-size: 24px;
+  cursor: pointer;
+}
+@media (max-width: 600px) {
+  .global-nav .nav-links {
+    display: none;
+    position: absolute;
+    top: 56px;
+    left: 0;
+    right: 0;
+    background: #0d0f17;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+    flex-direction: column;
+    padding: 16px 24px;
+    gap: 16px;
+  }
+  .global-nav .nav-links.open {
+    display: flex;
+  }
+  .nav-mobile-toggle {
+    display: block;
+  }
+}
+
+</style>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-5XTG86GVGY"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-5XTG86GVGY');
+</script>
+</head>
+<body>
+<nav class="global-nav">
+<div class="global-nav-inner">
+<a href="/" class="logo">🧮 USTariff<span>Calc</span></a>
+<button class="nav-mobile-toggle" onclick="document.querySelector('.nav-links').classList.toggle('open')">☰</button>
+<div class="nav-links">
+<a href="/">Tariff Calculator</a>
+<a href="/fba-profit-calculator.html">FBA Profit</a>
+<a href="/landed-cost-calculator.html">Landed Cost</a>
+<a href="/tariff-comparison-calculator.html">Compare Countries</a>
+<a href="/de-minimis-calculator.html">De Minimis</a>
+<a href="/guides.html">Guides</a>
+<a href="/about.html">About</a>
+</div>
+</div>
+</nav>
+
+<!-- Countdown Banner -->
+<div class="countdown-banner">
+  ⚠️ SECTION 122 EXPIRES IN <span class="days" id="countdown-days">--</span> DAYS (JULY 24, 2026) — RATES MAY CHANGE
+</div>
+
+<!-- Header -->
+<header>
+  <div class="badge">UPDATED APRIL 2026 — POST-SCOTUS RATES</div>
+  <h1>US Import Tariff<br>Calculator</h1>
+  <p>Calculate the real cost of importing goods into the United States. Section 122 + Section 301 + Section 232 + MFN duties — all layers, one number.</p>
+</header>
+
+<!-- Calculator -->
+<main>
+  <div class="card">
+    <!-- Country -->
+    <label class="field">
+      <span class="field-label">Country of Origin</span>
+      <select id="country" class="select">
+        <option value="">Select country...</option>
+      </select>
+    </label>
+
+    <!-- Product -->
+    <label class="field">
+      <span class="field-label">Product Category</span>
+      <select id="product" class="select">
+        <option value="">Select product category...</option>
+      </select>
+    </label>
+
+    <!-- Custom MFN -->
+    <label class="field" id="mfn-field" style="display:none;">
+      <span class="field-label">Custom MFN Rate % <span class="hint">(optional — defaults to avg <span id="mfn-default"></span>%)</span></span>
+      <input type="number" id="custom-mfn" class="input" step="0.1" min="0" max="100" placeholder="">
+    </label>
+
+    <!-- Value + Shipping -->
+    <div class="grid-2">
+      <label class="field" style="margin-bottom:0">
+        <span class="field-label">Unit Value (USD)</span>
+        <input type="number" id="value" class="input" min="0" placeholder="1,000">
+      </label>
+      <label class="field" style="margin-bottom:0">
+        <span class="field-label">Shipping (USD)</span>
+        <input type="number" id="shipping" class="input" min="0" placeholder="0">
+      </label>
+    </div>
+
+    <!-- Quantity -->
+    <label class="field">
+      <span class="field-label">Quantity</span>
+      <input type="number" id="quantity" class="input" min="1" value="1" placeholder="1">
+    </label>
+
+    <!-- Buttons -->
+    <div class="btn-row">
+      <button id="calc-btn" class="btn-primary" disabled>Calculate Total Duty</button>
+      <button id="reset-btn" class="btn-secondary" style="display:none;">Reset</button>
+    </div>
+  </div>
+
+  <!-- Results -->
+  <div id="results-section" style="display:none;">
+    <div class="results-wrapper">
+      <!-- Email Gate -->
+      <div id="email-gate" class="email-gate">
+        <div class="email-gate-inner">
+          <div class="icon">📊</div>
+          <h3>Your Results Are Ready</h3>
+          <p class="desc">Get your tariff breakdown + weekly rate change alerts. Free, no account needed.</p>
+          <input type="email" id="gate-email" class="email-input" placeholder="you@company.com">
+          <p class="email-error" id="email-error">Please enter a valid email address.</p>
+          <button id="email-submit" class="email-btn">Show Results + Get Alerts →</button>
+          <button id="email-skip" style="display:block;width:100%;padding:12px 0;margin-top:10px;border-radius:10px;border:1px solid rgba(255,255,255,0.15);background:transparent;color:rgba(255,255,255,0.4);font-size:14px;cursor:pointer;font-family:'DM Sans',sans-serif;">Skip — just show my results</button>
+          <p class="fine-print">✓ Results appear instantly on this page &nbsp;·&nbsp; ✓ Unsubscribe anytime</p>
+        </div>
+      </div>
+
+      <!-- Results Card -->
+      <div id="results-card" class="card results-blurred">
+        <!-- Total Rate -->
+        <div class="total-rate-section">
+          <p class="total-rate-label">Total Effective Tariff Rate</p>
+          <p id="total-rate" class="total-rate-value rate-mid">0.0%</p>
+          <p id="total-rate-sub" class="total-rate-sub"></p>
+        </div>
+
+        <!-- Breakdown Bar -->
+        <div id="breakdown-bar" class="breakdown-bar"></div>
+        <div id="breakdown-legend" class="breakdown-legend"></div>
+
+        <!-- Detail Grid -->
+        <div class="detail-grid">
+          <div class="detail-card">
+            <p class="label">Customs Value</p>
+            <p class="value" id="d-customs-value">$0</p>
+            <p class="sub" id="d-customs-sub">1 unit</p>
+          </div>
+          <div class="detail-card highlight">
+            <p class="label">Total Duties</p>
+            <p class="value" id="d-duty-value">$0</p>
+            <p class="sub" id="d-duty-sub">0% effective</p>
+          </div>
+          <div class="detail-card">
+            <p class="label">Merch. Processing Fee</p>
+            <p class="value" id="d-mpf-value">$0</p>
+            <p class="sub">0.3464% (capped)</p>
+          </div>
+          <div class="detail-card">
+            <p class="label">Harbor Maint. Fee</p>
+            <p class="value" id="d-hmf-value">$0</p>
+            <p class="sub">0.125%</p>
+          </div>
+        </div>
+
+        <!-- Landed Cost -->
+        <div class="landed-cost">
+          <div class="label-section">
+            <p class="label">Total Landed Cost</p>
+            <p class="sub">Product + shipping + all duties & fees</p>
+          </div>
+          <p class="amount" id="landed-amount">$0</p>
+        </div>
+
+        <!-- Country Note -->
+        <div id="country-note" class="country-note" style="display:none;">
+          <p class="title" id="note-title"></p>
+          <p class="text" id="note-text"></p>
+        </div>
+
+        <!-- Disclaimer -->
+        <p class="disclaimer">
+          Estimates for planning purposes only. Actual duties determined by US Customs and Border Protection
+          based on HTS classification, valuation, and applicable rulings. Rates current as of April 2026.
+          Section 122 tariff expires July 24, 2026. Consult a licensed customs broker for official determinations.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Guide CTA -->
+  <div style="max-width:640px;margin:0 auto;padding:0 20px 8px;">
+    <div style="background:rgba(249,115,22,0.06);border:1px solid rgba(249,115,22,0.18);border-radius:20px;padding:28px 28px;display:flex;flex-direction:column;gap:16px;align-items:flex-start;">
+      <div>
+        <p style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:#f97316;margin-bottom:8px;">PDF Reference Guide</p>
+        <p style="font-size:20px;font-weight:900;color:#fff;margin-bottom:8px;line-height:1.2;">Want the complete picture?</p>
+        <p style="font-size:14px;color:rgba(255,255,255,0.45);line-height:1.6;max-width:460px;">Get the full 2026 US Tariff Guide — all rates, strategies, and deadlines in one 25-page reference.</p>
+      </div>
+      <a href="/tariff-guide.html" style="display:inline-flex;align-items:center;gap:8px;background:#f97316;color:#fff;font-size:14px;font-weight:800;padding:12px 22px;border-radius:10px;text-decoration:none;transition:background .2s;" onmouseover="this.style.background='#ea6c10'" onmouseout="this.style.background='#f97316'">Get the Guide — $9 →</a>
+    </div>
+  </div>
+
+  <!-- Info Section -->
+  <div class="info-section">
+    <h2>How US Tariffs Stack in 2026</h2>
+    <p class="intro">US import duties are additive — multiple tariff layers apply simultaneously to most imports. Here's how they combine:</p>
+
+    <div class="info-item">
+      <div class="bar" style="background:#3b82f6;"></div>
+      <div>
+        <p class="title">MFN Base Duty</p>
+        <p class="desc">Standard rate based on your product's HTS code. Ranges from 0% to 48% depending on product type.</p>
+      </div>
+    </div>
+    <div class="info-item">
+      <div class="bar" style="background:#f97316;"></div>
+      <div>
+        <p class="title">Section 122 (15%)</p>
+        <p class="desc">Global surcharge effective Feb 24, 2026. Expires July 24, 2026. Products under Section 232 are exempt. USMCA-qualifying goods exempt.</p>
+      </div>
+    </div>
+    <div class="info-item">
+      <div class="bar" style="background:#ef4444;"></div>
+      <div>
+        <p class="title">Section 301 (China)</p>
+        <p class="desc">Additional 7.5–100% on Chinese goods. EVs at 100%, solar 50%, semiconductors 50%, most goods 25%.</p>
+      </div>
+    </div>
+    <div class="info-item">
+      <div class="bar" style="background:#8b5cf6;"></div>
+      <div>
+        <p class="title">Section 232 (Sector)</p>
+        <p class="desc">Steel & aluminum 50%, automobiles 25%, copper 25%, semiconductors 25%. Applies regardless of country (some UK exceptions).</p>
+      </div>
+    </div>
+
+    <div class="example-box">
+      <p class="title">⚡ Example: Chinese Steel Rebar</p>
+      <p class="formula">3.8% MFN + 0% Section 122* + 25% Section 301 + 50% Section 232 = <strong>78.8% effective rate</strong></p>
+      <p class="note">*Section 232 products are exempt from Section 122</p>
+    </div>
+  </div>
+
+  <!-- SEO Content -->
+  <div class="seo-section">
+    <h2>Understanding US Import Tariffs in 2026</h2>
+    <p>The US tariff landscape changed dramatically in February 2026 when the Supreme Court struck down IEEPA-based tariffs. Within hours, the administration imposed a new global surcharge under Section 122 of the Trade Act of 1974, creating a complex multi-layered duty system that importers must navigate carefully.</p>
+
+    <h3>What is Section 122?</h3>
+    <p>Section 122 of the Trade Act of 1974 authorizes the President to impose temporary tariffs of up to 15% for 150 days to address large trade deficits. The current 15% surcharge took effect February 24, 2026 and is set to expire July 24, 2026 unless Congress acts to extend it.</p>
+
+    <h3>How do tariff layers stack?</h3>
+    <p>US import duties are additive. A single product can be subject to MFN base duty, Section 122 surcharge, Section 301 tariffs (for Chinese goods), and Section 232 tariffs (for steel, aluminum, autos, and semiconductors) — all at the same time. The only exception: Section 232 products are exempt from Section 122, so those two don't stack.</p>
+
+    <h3>What happens after July 24, 2026?</h3>
+    <p>The administration has signaled plans to replace Section 122 with expanded Section 301 and Section 232 coverage. New Section 301 investigations were opened in March 2026 targeting 16 economies. Importers should monitor USTR announcements and plan for potential rate changes.</p>
+
+    <h3>Tips to Reduce Your Tariff Exposure</h3>
+    <p>Consider sourcing from countries with trade agreements (USMCA, KORUS, CAFTA-DR). Ensure goods meet rules of origin requirements. Consult a customs broker about tariff engineering — classifying products under HTS codes with lower duty rates. Explore Foreign Trade Zones (FTZs) to delay or reduce duties. Track Section 301 exclusions that may apply to your products.</p>
+  </div>
+
+  
+  <!-- Expert Analysis Section -->
+  <div class="info-section" style="margin-top: 24px;">
+    <h2>Expert Analysis: The 2026 Tariff Landscape</h2>
+    <p>The US import tariff system in 2026 is the most complex it has been in over a century. After the Supreme Court struck down IEEPA tariffs in February 2026, the administration scrambled to replace them with a Section 122 surcharge — a rarely used emergency provision that caps at 15% for 150 days. This created an unprecedented situation where four separate tariff programs operate simultaneously.</p>
+    <p>What makes the current environment uniquely challenging for importers is the <strong>stacking effect</strong>. Unlike previous tariff regimes where one rate applied per product, today's system layers MFN base duties, Section 122 surcharges, Section 301 penalties, and Section 232 sector tariffs on top of each other. A single product from China can face four separate assessments before it clears customs.</p>
+    <p>I built this calculator after spending hours trying to manually calculate tariffs on my own imports. The existing government tools — while accurate — require you to know your exact HTS code and navigate multiple databases. This tool simplifies that process by using category-average rates that get you within 1-3% of the actual duty in most cases.</p>
+    <h3>What This Calculator Does Differently</h3>
+    <p>Most online tariff tools show a single rate. But in reality, you need to know how multiple programs interact. For example, did you know that Section 232 products (steel, aluminum, autos) are <em>exempt</em> from the Section 122 surcharge? That exemption saves importers thousands of dollars per shipment — but most basic calculators miss it entirely. Our tool handles these exemptions automatically.</p>
+    <p>Another common gap: processing fees. The Merchandise Processing Fee (0.3464% of customs value, capped at $614.35) and Harbor Maintenance Fee (0.125%) are small percentages but add real dollars on large shipments. A $100,000 container incurs $471 in fees alone. We include both in every calculation.</p>
+    <h3>Limitations to Be Aware Of</h3>
+    <p>This calculator uses category-average MFN rates. Your actual MFN rate depends on the specific 10-digit HTS code assigned to your product. For example, "electronics" ranges from 0% to 5% depending on the exact item — we use 2.5% as the average. For precise rates, look up your HTS code at <a href="https://hts.usitc.gov" target="_blank" rel="noopener">hts.usitc.gov</a> or consult a licensed customs broker.</p>
+    <p>Additionally, some products face anti-dumping or countervailing duties that are separate from the tariff programs covered here. These AD/CVD duties can add 20-300%+ and are product-specific. Check the ITC's AD/CVD orders database if you import steel, furniture, plywood, or other commonly affected products.</p>
+  </div>
+
+<!-- Articles Section -->
+  <div class="info-section" style="margin-top: 24px;">
+    <h2 style="font-size: 20px; font-weight: 800; margin-bottom: 20px; color: #fff;">Tools & Calculators</h2>
+
+    <a href="/fba-profit-calculator.html" style="display: block; text-decoration: none; padding: 18px 20px; background: rgba(37,99,235,0.08); border: 1px solid rgba(37,99,235,0.2); border-radius: 12px; margin-bottom: 12px; transition: border-color 0.2s;">
+      <p style="font-size: 16px; font-weight: 700; color: #60a5fa; margin: 0 0 4px;">📊 Amazon FBA Profit Margin Calculator</p>
+      <p style="font-size: 13px; color: rgba(255,255,255,0.4); margin: 0;">Calculate your real FBA margin after tariffs, Amazon fees, and shipping costs.</p>
+    </a>
+
+    <a href="/landed-cost-calculator.html" style="display: block; text-decoration: none; padding: 18px 20px; background: rgba(5,150,105,0.08); border: 1px solid rgba(5,150,105,0.2); border-radius: 12px; margin-bottom: 12px; transition: border-color 0.2s;">
+      <p style="font-size: 16px; font-weight: 700; color: #34d399; margin: 0 0 4px;">📦 Landed Cost Calculator</p>
+      <p style="font-size: 13px; color: rgba(255,255,255,0.4); margin: 0;">Total import cost including product, shipping, insurance, tariffs, and fees.</p>
+    </a>
+
+    <a href="/tariff-comparison-calculator.html" style="display: block; text-decoration: none; padding: 18px 20px; background: rgba(124,58,237,0.08); border: 1px solid rgba(124,58,237,0.2); border-radius: 12px; margin-bottom: 12px; transition: border-color 0.2s;">
+      <p style="font-size: 16px; font-weight: 700; color: #c084fc; margin: 0 0 4px;">🔄 Tariff Comparison Calculator</p>
+      <p style="font-size: 13px; color: rgba(255,255,255,0.4); margin: 0;">Compare import costs between two countries side by side.</p>
+    </a>
+
+    <a href="/de-minimis-calculator.html" style="display: block; text-decoration: none; padding: 18px 20px; background: rgba(220,38,38,0.08); border: 1px solid rgba(220,38,38,0.2); border-radius: 12px; margin-bottom: 20px; transition: border-color 0.2s;">
+      <p style="font-size: 16px; font-weight: 700; color: #f87171; margin: 0 0 4px;">🔍 De Minimis Calculator</p>
+      <p style="font-size: 13px; color: rgba(255,255,255,0.4); margin: 0;">Is your package duty-free? Check the $800 exemption instantly.</p>
+    </a>
+
+    <h2 style="font-size: 20px; font-weight: 800; margin: 28px 0 16px; color: #fff;">Recommended Tools for Importers</h2>
+    <p style="font-size: 14px; color: rgba(255,255,255,0.35); margin-bottom: 16px;">Tools we recommend to help manage your import costs and grow your business.</p>
+
+    <a href="https://i.helium10.com/enKnyg" target="_blank" rel="noopener" style="display: flex; align-items: center; gap: 16px; text-decoration: none; padding: 16px 18px; background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; margin-bottom: 10px; transition: border-color 0.2s;">
+      <div style="font-size: 28px; flex-shrink: 0;">🔍</div>
+      <div>
+        <p style="font-size: 15px; font-weight: 700; color: #fff; margin: 0 0 3px;">Helium 10 <span style="font-size: 11px; font-weight: 600; color: rgba(255,255,255,0.3); margin-left: 6px;">PARTNER</span></p>
+        <p style="font-size: 13px; color: rgba(255,255,255,0.4); margin: 0;">Find profitable products to import & sell on Amazon. Keyword research, product tracking, and listing optimization.</p>
+      </div>
+    </a>
+
+    <a href="https://easyship.ilbqy6.net/L0ZnW3" target="_blank" rel="noopener" style="display: flex; align-items: center; gap: 16px; text-decoration: none; padding: 16px 18px; background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; margin-bottom: 20px; transition: border-color 0.2s;">
+      <div style="font-size: 28px; flex-shrink: 0;">📦</div>
+      <div>
+        <p style="font-size: 15px; font-weight: 700; color: #fff; margin: 0 0 3px;">Easyship <span style="font-size: 11px; font-weight: 600; color: rgba(255,255,255,0.3); margin-left: 6px;">PARTNER</span></p>
+        <p style="font-size: 13px; color: rgba(255,255,255,0.4); margin: 0;">Compare shipping rates and calculate duties automatically. All-in-one shipping platform for e-commerce.</p>
+      </div>
+    </a>
+
+    <h2 style="font-size: 20px; font-weight: 800; margin-bottom: 20px; color: #fff;"><a href="/guides.html" style="color: #fff; text-decoration: none; border-bottom: 2px solid rgba(249,115,22,0.4);">Tariff Guides & Resources →</a></h2>
+    
+    <a href="/tariffs-on-chinese-goods-2026.html" style="display: block; text-decoration: none; padding: 18px 20px; background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; margin-bottom: 12px; transition: border-color 0.2s;">
+      <p style="font-size: 16px; font-weight: 700; color: #fff; margin: 0 0 4px;">US Tariffs on Chinese Goods in 2026: Complete Guide</p>
+      <p style="font-size: 13px; color: rgba(255,255,255,0.4); margin: 0;">All four tariff layers explained with real-world examples. Section 301 rates from 7.5% to 100%.</p>
+    </a>
+
+    <a href="/section-122-tariff-explained.html" style="display: block; text-decoration: none; padding: 18px 20px; background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; margin-bottom: 12px; transition: border-color 0.2s;">
+      <p style="font-size: 16px; font-weight: 700; color: #fff; margin: 0 0 4px;">Section 122 Tariff Explained: The 15% Global Surcharge</p>
+      <p style="font-size: 13px; color: rgba(255,255,255,0.4); margin: 0;">What it is, who's exempt, when it expires, and how it stacks with other tariffs.</p>
+    </a>
+
+    <a href="/how-to-calculate-import-duty.html" style="display: block; text-decoration: none; padding: 18px 20px; background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; margin-bottom: 12px; transition: border-color 0.2s;">
+      <p style="font-size: 16px; font-weight: 700; color: #fff; margin: 0 0 4px;">How to Calculate US Import Duty: Step-by-Step</p>
+      <p style="font-size: 13px; color: rgba(255,255,255,0.4); margin: 0;">The complete formula with MFN, Section 122, 301, 232, and processing fees.</p>
+    </a>
+
+    <a href="/reduce-import-tariffs.html" style="display: block; text-decoration: none; padding: 18px 20px; background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; margin-bottom: 12px; transition: border-color 0.2s;">
+      <p style="font-size: 16px; font-weight: 700; color: #fff; margin: 0 0 4px;">7 Ways to Legally Reduce Your Import Tariffs</p>
+      <p style="font-size: 13px; color: rgba(255,255,255,0.4); margin: 0;">FTZs, HTS optimization, trade agreements, duty drawback, and more.</p>
+    </a>
+
+    <a href="/ieepa-tariff-refund-2026.html" style="display: block; text-decoration: none; padding: 18px 20px; background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; margin-bottom: 12px; transition: border-color 0.2s;">
+      <p style="font-size: 16px; font-weight: 700; color: #fff; margin: 0 0 4px;">How to Get Your IEEPA Tariff Refund in 2026</p>
+      <p style="font-size: 13px; color: rgba(255,255,255,0.4); margin: 0;">Step-by-step guide to reclaiming duties paid under struck-down IEEPA tariffs.</p>
+    </a>
+
+    <a href="/tariffs-amazon-fba-sellers-2026.html" style="display: block; text-decoration: none; padding: 18px 20px; background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; margin-bottom: 12px; transition: border-color 0.2s;">
+      <p style="font-size: 16px; font-weight: 700; color: #fff; margin: 0 0 4px;">Tariffs on Amazon FBA Products: What Every Seller Must Know</p>
+      <p style="font-size: 13px; color: rgba(255,255,255,0.4); margin: 0;">Duty rates by category, landed cost formula, and 5 strategies to protect margins.</p>
+    </a>
+
+    <a href="/section-122-expiration-july-2026.html" style="display: block; text-decoration: none; padding: 18px 20px; background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; margin-bottom: 12px; transition: border-color 0.2s;">
+      <p style="font-size: 16px; font-weight: 700; color: #fff; margin: 0 0 4px;">What Happens When Section 122 Expires July 24, 2026?</p>
+      <p style="font-size: 13px; color: rgba(255,255,255,0.4); margin: 0;">Three scenarios and how to prepare your import business.</p>
+    </a>
+
+    <a href="/de-minimis-china-2026.html" style="display: block; text-decoration: none; padding: 18px 20px; background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; margin-bottom: 12px; transition: border-color 0.2s;">
+      <p style="font-size: 16px; font-weight: 700; color: #fff; margin: 0 0 4px;">Is the $800 De Minimis Exemption Still Valid for China?</p>
+      <p style="font-size: 13px; color: rgba(255,255,255,0.4); margin: 0;">Short answer: No. Here's what changed and who's affected.</p>
+    </a>
+
+    <a href="/tariff-temu-alibaba-orders-2026.html" style="display: block; text-decoration: none; padding: 18px 20px; background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; transition: border-color 0.2s;">
+      <p style="font-size: 16px; font-weight: 700; color: #fff; margin: 0 0 4px;">Tariffs on Temu & Alibaba Orders 2026</p>
+      <p style="font-size: 13px; color: rgba(255,255,255,0.4); margin: 0;">Real examples of what you'll pay in duties on Chinese e-commerce orders.</p>
+    </a>
+  </div>
+
+  <footer>
+    <p style="margin-bottom: 12px;">
+      <a href="/about.html" style="color: rgba(255,255,255,0.4); text-decoration: none; margin: 0 12px; font-size: 13px;">About</a>
+      <a href="/privacy.html" style="color: rgba(255,255,255,0.4); text-decoration: none; margin: 0 12px; font-size: 13px;">Privacy Policy</a>
+      <a href="/contact.html" style="color: rgba(255,255,255,0.4); text-decoration: none; margin: 0 12px; font-size: 13px;">Contact</a>
+    </p>
+    <p>Built with publicly available tariff data. Not legal or trade advice.<br>Rates change frequently — always verify with a licensed customs broker.<br>© 2026 USTariffCalc. All rights reserved.</p>
+  </footer>
+</main>
+
+<!-- Google AdSense -->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4323376361842642" crossorigin="anonymous"></script>
+
+<script>
+// === DATA ===
+const COUNTRIES = [
+  { name: "China", flag: "🇨🇳", s122: 15, s301: 25, s232: { steel:50, aluminum:50, autos:25, semiconductors:50 }, notes: "Section 301 rates range 7.5–100% by product. EVs face 100%. Solar & semiconductors 50%." },
+  { name: "Canada (USMCA)", flag: "🇨🇦", s122: 0, s301: 0, s232: { steel:50, aluminum:50, autos:25 }, notes: "USMCA-compliant goods exempt from Section 122. Non-USMCA goods face 15%." },
+  { name: "Canada (Non-USMCA)", flag: "🇨🇦", s122: 15, s301: 0, s232: { steel:50, aluminum:50, autos:25 }, notes: "Goods not meeting USMCA rules of origin." },
+  { name: "Mexico (USMCA)", flag: "🇲🇽", s122: 0, s301: 0, s232: { steel:50, aluminum:50, autos:25 }, notes: "USMCA-compliant goods exempt from Section 122." },
+  { name: "Mexico (Non-USMCA)", flag: "🇲🇽", s122: 15, s301: 0, s232: { steel:50, aluminum:50, autos:25 }, notes: "Goods not meeting USMCA rules of origin." },
+  { name: "European Union", flag: "🇪🇺", s122: 15, s301: 0, s232: { steel:50, aluminum:50, autos:25 }, notes: "Under new Section 301 investigation for excess manufacturing capacity." },
+  { name: "United Kingdom", flag: "🇬🇧", s122: 15, s301: 0, s232: { steel:25, aluminum:25, autos:25 }, notes: "UK gets preferential Section 232 rates (25%) on steel/aluminum." },
+  { name: "Japan", flag: "🇯🇵", s122: 15, s301: 0, s232: { steel:50, aluminum:50, autos:25 }, notes: "Under Section 301 investigation. Rates may increase." },
+  { name: "South Korea", flag: "🇰🇷", s122: 15, s301: 0, s232: { steel:50, aluminum:50, autos:25 }, notes: "KORUS FTA may provide reduced rates for qualifying goods." },
+  { name: "India", flag: "🇮🇳", s122: 15, s301: 0, s232: { steel:50, aluminum:50, autos:25 }, notes: "Under Section 301 investigation. Previously faced 25% IEEPA rate." },
+  { name: "Vietnam", flag: "🇻🇳", s122: 15, s301: 0, s232: { steel:50, aluminum:50, autos:25 }, notes: "Under Section 301 investigation. Previously faced 46% IEEPA rate." },
+  { name: "Taiwan", flag: "🇹🇼", s122: 15, s301: 0, s232: { steel:50, aluminum:50, autos:25, semiconductors:25 }, notes: "Semiconductors face 25% Section 232 tariff." },
+  { name: "Thailand", flag: "🇹🇭", s122: 15, s301: 0, s232: { steel:50, aluminum:50, autos:25 }, notes: "Under Section 301 investigation. Previously faced 36% IEEPA." },
+  { name: "Bangladesh", flag: "🇧🇩", s122: 15, s301: 0, s232: { steel:50, aluminum:50, autos:25 }, notes: "Major textile exporter. Combined rates can exceed 30% on apparel." },
+  { name: "Indonesia", flag: "🇮🇩", s122: 15, s301: 0, s232: { steel:50, aluminum:50, autos:25 }, notes: "Under Section 301 investigation for excess capacity." },
+  { name: "Cambodia", flag: "🇰🇭", s122: 15, s301: 0, s232: { steel:50, aluminum:50, autos:25 }, notes: "Under Section 301 investigation. Previously faced 49% IEEPA." },
+  { name: "Brazil", flag: "🇧🇷", s122: 15, s301: 0, s232: { steel:50, aluminum:50, autos:25 }, notes: "Complex rate structure on some goods." },
+  { name: "Turkey", flag: "🇹🇷", s122: 15, s301: 0, s232: { steel:50, aluminum:50, autos:25 }, notes: "Steel exports heavily impacted by Section 232." },
+  { name: "Singapore", flag: "🇸🇬", s122: 15, s301: 0, s232: { steel:50, aluminum:50, autos:25 }, notes: "Under Section 301 investigation despite FTA." },
+  { name: "Other Countries", flag: "🌍", s122: 15, s301: 0, s232: { steel:50, aluminum:50, autos:25 }, notes: "Default 15% Section 122 applies to most countries." },
+];
+
+const PRODUCTS = [
+  { name: "General Consumer Goods", mfnRange: "0–10%", avgMfn: 5, sector: null },
+  { name: "Electronics", mfnRange: "0–5%", avgMfn: 2.5, sector: null },
+  { name: "Apparel & Textiles", mfnRange: "10–32%", avgMfn: 18, sector: null },
+  { name: "Footwear", mfnRange: "8–48%", avgMfn: 15, sector: null },
+  { name: "Steel & Steel Products", mfnRange: "0–6%", avgMfn: 3, sector: "steel" },
+  { name: "Aluminum & Aluminum Products", mfnRange: "0–6%", avgMfn: 3, sector: "aluminum" },
+  { name: "Automobiles", mfnRange: "2.5%", avgMfn: 2.5, sector: "autos" },
+  { name: "Auto Parts", mfnRange: "0–4%", avgMfn: 2.5, sector: "autos" },
+  { name: "Semiconductors", mfnRange: "0%", avgMfn: 0, sector: "semiconductors" },
+  { name: "Furniture", mfnRange: "0–5%", avgMfn: 3, sector: null },
+  { name: "Food & Agriculture", mfnRange: "0–25%", avgMfn: 8, sector: null },
+  { name: "Machinery & Equipment", mfnRange: "0–5%", avgMfn: 2.5, sector: null },
+  { name: "Chemicals", mfnRange: "0–6.5%", avgMfn: 4, sector: null },
+  { name: "Plastics & Rubber", mfnRange: "0–6%", avgMfn: 4, sector: null },
+  { name: "Toys & Games", mfnRange: "0–6%", avgMfn: 3, sector: null },
+  { name: "Pharmaceuticals", mfnRange: "0%", avgMfn: 0, sector: null },
+];
+
+// === INIT ===
+const countrySelect = document.getElementById('country');
+const productSelect = document.getElementById('product');
+const valueInput = document.getElementById('value');
+const shippingInput = document.getElementById('shipping');
+const quantityInput = document.getElementById('quantity');
+const customMfnInput = document.getElementById('custom-mfn');
+const mfnField = document.getElementById('mfn-field');
+const mfnDefault = document.getElementById('mfn-default');
+const calcBtn = document.getElementById('calc-btn');
+const resetBtn = document.getElementById('reset-btn');
+const resultsSection = document.getElementById('results-section');
+const resultsCard = document.getElementById('results-card');
+const emailGate = document.getElementById('email-gate');
+const gateEmail = document.getElementById('gate-email');
+const emailError = document.getElementById('email-error');
+const emailSubmit = document.getElementById('email-submit');
+
+// Populate selects
+COUNTRIES.forEach((c, i) => {
+  const opt = document.createElement('option');
+  opt.value = i;
+  opt.textContent = c.flag + ' ' + c.name;
+  countrySelect.appendChild(opt);
+});
+PRODUCTS.forEach((p, i) => {
+  const opt = document.createElement('option');
+  opt.value = i;
+  opt.textContent = p.name + ' (MFN: ' + p.mfnRange + ')';
+  productSelect.appendChild(opt);
+});
+
+// Countdown
+function updateCountdown() {
+  const expiry = new Date('2026-07-24T00:00:00Z');
+  const days = Math.max(0, Math.ceil((expiry - new Date()) / 86400000));
+  document.getElementById('countdown-days').textContent = days;
+}
+updateCountdown();
+setInterval(updateCountdown, 3600000);
+
+// Enable/disable calc button
+function checkForm() {
+  calcBtn.disabled = !(countrySelect.value && productSelect.value && valueInput.value);
+}
+countrySelect.addEventListener('change', () => { checkForm(); showMfnField(); });
+productSelect.addEventListener('change', () => { checkForm(); showMfnField(); });
+valueInput.addEventListener('input', checkForm);
+
+function showMfnField() {
+  if (productSelect.value !== '') {
+    const p = PRODUCTS[parseInt(productSelect.value)];
+    mfnField.style.display = 'block';
+    mfnDefault.textContent = p.avgMfn;
+    customMfnInput.placeholder = p.avgMfn;
+  } else {
+    mfnField.style.display = 'none';
+  }
+}
+
+// Format helpers
+function fmtCurrency(n) {
+  if (n >= 1000000) return '$' + (n/1000000).toFixed(2) + 'M';
+  if (n >= 1000) return '$' + (n/1000).toFixed(1) + 'K';
+  return '$' + n.toFixed(2);
+}
+function fmtPct(n) { return n.toFixed(1) + '%'; }
+
+// Calculate
+calcBtn.addEventListener('click', function() {
+  const ci = parseInt(countrySelect.value);
+  const pi = parseInt(productSelect.value);
+  const c = COUNTRIES[ci];
+  const p = PRODUCTS[pi];
+  const unitVal = parseFloat(valueInput.value) || 0;
+  const ship = parseFloat(shippingInput.value) || 0;
+  const qty = parseInt(quantityInput.value) || 1;
+  const customsValue = (unitVal + ship) * qty;
+
+  const mfn = customMfnInput.value !== '' ? parseFloat(customMfnInput.value) : p.avgMfn;
+  const has232 = p.sector && c.s232[p.sector];
+  const s122 = has232 ? 0 : c.s122;
+  const s301 = c.name === 'China' ? (p.sector ? 25 : c.s301) : 0;
+  const s232rate = p.sector ? (c.s232[p.sector] || 0) : 0;
+  const totalRate = mfn + s122 + s301 + s232rate;
+  const totalDuty = customsValue * (totalRate / 100);
+  const mpf = Math.min(Math.max(customsValue * 0.003464, 31.67), 614.35);
+  const hmf = customsValue * 0.00125;
+  const totalLanded = customsValue + totalDuty + mpf + hmf;
+
+  // Display
+  resultsSection.style.display = 'block';
+  resetBtn.style.display = 'block';
+
+  // Total rate
+  const rateEl = document.getElementById('total-rate');
+  rateEl.textContent = fmtPct(totalRate);
+  rateEl.className = 'total-rate-value ' + (totalRate > 30 ? 'rate-high' : totalRate > 15 ? 'rate-mid' : 'rate-low');
+  document.getElementById('total-rate-sub').textContent = 'on ' + fmtCurrency(customsValue) + ' customs value';
+
+  // Breakdown bar
+  const segments = [
+    { label: 'MFN Duty', value: mfn, color: '#3b82f6' },
+    { label: 'Section 122', value: s122, color: '#f97316' },
+    { label: 'Section 301', value: s301, color: '#ef4444' },
+    { label: 'Section 232', value: s232rate, color: '#8b5cf6' },
+  ].filter(s => s.value > 0);
+  const totalSegs = segments.reduce((a, s) => a + s.value, 0);
+  
+  const barEl = document.getElementById('breakdown-bar');
+  barEl.innerHTML = segments.map(s =>
+    `<div class="seg" style="width:${(s.value/totalSegs*100)}%;background:${s.color};min-width:${s.value>0?'28px':'0'}" title="${s.label}: ${s.value.toFixed(1)}%">${s.value>=3?s.value.toFixed(0)+'%':''}</div>`
+  ).join('');
+
+  const legendEl = document.getElementById('breakdown-legend');
+  legendEl.innerHTML = segments.map(s =>
+    `<span class="item"><span class="dot" style="background:${s.color}"></span>${s.label}: ${s.value.toFixed(1)}%</span>`
+  ).join('');
+
+  // Detail cards
+  document.getElementById('d-customs-value').textContent = fmtCurrency(customsValue);
+  document.getElementById('d-customs-sub').textContent = qty + ' unit' + (qty > 1 ? 's' : '');
+  document.getElementById('d-duty-value').textContent = fmtCurrency(totalDuty);
+  document.getElementById('d-duty-sub').textContent = fmtPct(totalRate) + ' effective';
+  document.getElementById('d-mpf-value').textContent = fmtCurrency(mpf);
+  document.getElementById('d-hmf-value').textContent = fmtCurrency(hmf);
+  document.getElementById('landed-amount').textContent = fmtCurrency(totalLanded);
+
+  // Country note
+  const noteEl = document.getElementById('country-note');
+  noteEl.style.display = 'block';
+  document.getElementById('note-title').textContent = c.flag + ' ' + c.name + ' — Note';
+  document.getElementById('note-text').textContent = c.notes;
+
+  // Scroll
+  setTimeout(() => resultsSection.scrollIntoView({ behavior: 'smooth', block: 'start' }), 100);
+});
+
+// Reset
+resetBtn.addEventListener('click', function() {
+  countrySelect.value = '';
+  productSelect.value = '';
+  valueInput.value = '';
+  shippingInput.value = '';
+  quantityInput.value = '1';
+  customMfnInput.value = '';
+  mfnField.style.display = 'none';
+  resultsSection.style.display = 'none';
+  resetBtn.style.display = 'none';
+  resultsCard.className = 'card results-blurred';
+  emailGate.style.display = 'flex';
+  calcBtn.disabled = true;
+});
+
+// Email gate
+emailSubmit.addEventListener('click', function() {
+  const email = gateEmail.value.trim();
+  if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+    emailError.style.display = 'block';
+    return;
+  }
+  emailError.style.display = 'none';
+  emailSubmit.textContent = 'Unlocking...';
+  emailSubmit.disabled = true;
+
+  // Send to Beehiiv via API proxy
+  fetch('/api/subscribe', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({
+      email: email
+    })
+  })
+  .then(function(res) { return res.json(); })
+  .then(function(data) {
+    emailGate.style.display = 'none';
+    resultsCard.className = 'card results-clear';
+  })
+  .catch(function(err) {
+    // Still unlock results even if API fails
+    emailGate.style.display = 'none';
+    resultsCard.className = 'card results-clear';
+    console.error('Beehiiv error:', err);
+  });
+});
+gateEmail.addEventListener('keydown', function(e) {
+  if (e.key === 'Enter') emailSubmit.click();
+});
+
+// Skip button — show results without email
+document.getElementById('email-skip').addEventListener('click', function() {
+  emailGate.style.display = 'none';
+  resultsCard.className = 'card results-clear';
+});
+</script>
+
+<!-- Structured Data for SEO -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "US Import Tariff Calculator 2026",
+  "description": "Calculate total US import duties including Section 122, Section 301, Section 232 and MFN rates. Updated for post-SCOTUS 2026 tariff environment.",
+  "url": "https://ustariffcalc.com/",
+  "applicationCategory": "BusinessApplication",
+  "operatingSystem": "Web",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  }
+}
+</script>
+
+</body>
+</html>

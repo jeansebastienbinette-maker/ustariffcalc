@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>US Landed Cost Calculator 2026 — Calculate Total Import Cost Free</title>
+<meta name="description" content="Free landed cost calculator for US imports. Calculate your total cost including product, shipping, insurance, tariffs, duties, customs fees. Updated 2026 rates.">
+<meta name="google-site-verification" content="YlX6lQqHgEj_Zykv2NSI905c6CftbiLawMNsyyd40hA" />
+<link rel="canonical" href="https://ustariffcalc.com/landed-cost-calculator.html">
+<meta property="og:title" content="US Landed Cost Calculator 2026 — Total Import Cost">
+<meta property="og:description" content="Calculate your complete landed cost including tariffs, shipping, insurance and customs fees.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://ustariffcalc.com/landed-cost-calculator.html">
+<meta property="og:site_name" content="USTariffCalc">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="robots" content="index, follow">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4323376361842642" crossorigin="anonymous"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-5XTG86GVGY"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-5XTG86GVGY');</script>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{min-height:100vh;background:#0a0c12;color:#e2e8f0;font-family:'DM Sans',sans-serif;-webkit-font-smoothing:antialiased}
+.banner{background:linear-gradient(90deg,#059669,#10b981);padding:10px 16px;text-align:center;color:#fff;font-size:13px;font-weight:700;letter-spacing:.04em}
+.banner a{color:#fff;text-decoration:underline}
+header{padding:48px 24px 32px;text-align:center;max-width:800px;margin:0 auto;background:radial-gradient(ellipse at 50% 0%,rgba(5,150,105,.08) 0%,transparent 70%)}
+.badge{display:inline-block;padding:4px 14px;border-radius:20px;font-size:11px;font-weight:700;background:rgba(16,185,129,.15);color:#34d399;letter-spacing:.1em;margin-bottom:16px;border:1px solid rgba(16,185,129,.25)}
+h1{font-size:clamp(28px,5vw,46px);font-weight:900;line-height:1.1;margin:0 0 16px;background:linear-gradient(135deg,#fff,#94a3b8);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+header p{color:rgba(255,255,255,.5);font-size:16px;max-width:540px;margin:0 auto;line-height:1.6}
+main{max-width:700px;margin:0 auto;padding:0 20px 80px}
+.card{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:20px;padding:32px 28px;margin-bottom:24px}
+.section-title{font-size:15px;font-weight:800;color:rgba(255,255,255,.5);letter-spacing:.08em;text-transform:uppercase;margin-bottom:18px;padding-bottom:10px;border-bottom:1px solid rgba(255,255,255,.06)}
+.field{display:block;margin-bottom:18px}
+.field-label{font-size:12px;font-weight:700;color:rgba(255,255,255,.4);letter-spacing:.06em;text-transform:uppercase;display:block;margin-bottom:6px}
+.field-label .hint{font-weight:400;text-transform:none;color:rgba(255,255,255,.3)}
+.input,.select{width:100%;padding:12px 14px;border-radius:10px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);color:#fff;font-size:15px;outline:none;font-family:'DM Sans',sans-serif;transition:border-color .2s}
+.input:focus,.select:focus{border-color:rgba(16,185,129,.5)}
+.select{cursor:pointer;appearance:none}
+.select option{background:#1a1d2e}
+.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:18px}
+.grid-3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;margin-bottom:18px}
+.btn-primary{width:100%;padding:16px 0;border-radius:14px;border:none;background:linear-gradient(135deg,#059669,#10b981);color:#fff;font-size:16px;font-weight:800;cursor:pointer;font-family:'DM Sans',sans-serif;letter-spacing:.02em;transition:opacity .2s,transform .1s}
+.btn-primary:hover{opacity:.9}
+.btn-primary:active{transform:scale(.98)}
+.btn-primary:disabled{background:rgba(255,255,255,.1);cursor:not-allowed}
+.btn-row{display:flex;gap:12px}
+.btn-secondary{padding:16px 24px;border-radius:14px;border:1px solid rgba(255,255,255,.15);background:transparent;color:rgba(255,255,255,.5);font-size:14px;font-weight:600;cursor:pointer;font-family:'DM Sans',sans-serif}
+.results{display:none}
+.results.show{display:block}
+.result-hero{text-align:center;padding:24px 0;margin-bottom:20px}
+.result-hero .label{font-size:12px;font-weight:700;color:rgba(255,255,255,.4);letter-spacing:.1em;text-transform:uppercase;margin-bottom:8px}
+.result-hero .value{font-size:52px;font-weight:900;font-family:'JetBrains Mono',monospace;background:linear-gradient(135deg,#10b981,#059669);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.result-hero .sub{font-size:14px;color:rgba(255,255,255,.35);margin-top:4px}
+.breakdown-row{display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:1px solid rgba(255,255,255,.04)}
+.breakdown-row:last-child{border-bottom:none}
+.breakdown-row .label{font-size:14px;color:rgba(255,255,255,.5)}
+.breakdown-row .val{font-size:15px;font-weight:700;font-family:'JetBrains Mono',monospace;color:rgba(255,255,255,.7)}
+.breakdown-row.total{border-top:2px solid rgba(255,255,255,.1);padding-top:14px;margin-top:4px}
+.breakdown-row.total .label{font-weight:800;color:#fff;font-size:15px}
+.breakdown-row.total .val{color:#10b981;font-size:18px}
+.breakdown-row .sub-label{font-size:12px;color:rgba(255,255,255,.3);padding-left:16px}
+.pct-badge{display:inline-block;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:700;background:rgba(239,68,68,.1);color:#ef4444;margin-left:8px}
+.bar-container{margin:20px 0}
+.stacked-bar{display:flex;height:40px;border-radius:8px;overflow:hidden}
+.stacked-bar .seg{display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;color:#fff;transition:width .5s ease}
+.bar-legend{display:flex;flex-wrap:wrap;gap:10px;margin-top:8px}
+.bar-legend .item{font-size:11px;color:rgba(255,255,255,.45);display:flex;align-items:center;gap:4px}
+.bar-legend .dot{width:8px;height:8px;border-radius:2px;display:inline-block}
+.cta-box{background:linear-gradient(135deg,rgba(249,115,22,.12),rgba(239,68,68,.08));border:1px solid rgba(249,115,22,.25);border-radius:14px;padding:24px;text-align:center;margin:28px 0}
+.cta-box a{display:inline-block;padding:12px 28px;background:linear-gradient(135deg,#f97316,#ef4444);color:#fff;text-decoration:none;border-radius:10px;font-weight:800;font-size:15px}
+.info-section{margin-top:28px;background:rgba(255,255,255,.02);border:1px solid rgba(255,255,255,.06);border-radius:20px;padding:28px 24px}
+.info-section h2{font-size:20px;font-weight:800;color:#fff;margin-bottom:14px}
+.info-section p{font-size:15px;color:rgba(255,255,255,.45);line-height:1.7;margin-bottom:14px}
+.info-section a{color:#f97316}
+footer{text-align:center;margin-top:40px;padding:20px 0}
+footer a{color:rgba(255,255,255,.4);text-decoration:none;margin:0 12px;font-size:13px}
+footer p{font-size:11px;color:rgba(255,255,255,.2);margin-top:12px;line-height:1.6}
+@media(max-width:500px){.card{padding:24px 18px}.grid-2,.grid-3{grid-template-columns:1fr}.result-hero .value{font-size:40px}}
+
+/* Global Navigation */
+.global-nav {
+  background: rgba(255,255,255,0.03);
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  padding: 0 24px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+.global-nav-inner {
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 56px;
+}
+.global-nav .logo {
+  font-size: 16px;
+  font-weight: 900;
+  color: #fff;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.global-nav .logo span {
+  color: #f97316;
+}
+.global-nav .nav-links {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+.global-nav .nav-links a {
+  font-size: 13px;
+  font-weight: 600;
+  color: rgba(255,255,255,0.45);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.global-nav .nav-links a:hover {
+  color: #f97316;
+}
+.global-nav .nav-links a.active {
+  color: #f97316;
+}
+.nav-mobile-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: rgba(255,255,255,0.5);
+  font-size: 24px;
+  cursor: pointer;
+}
+@media (max-width: 600px) {
+  .global-nav .nav-links {
+    display: none;
+    position: absolute;
+    top: 56px;
+    left: 0;
+    right: 0;
+    background: #0d0f17;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+    flex-direction: column;
+    padding: 16px 24px;
+    gap: 16px;
+  }
+  .global-nav .nav-links.open {
+    display: flex;
+  }
+  .nav-mobile-toggle {
+    display: block;
+  }
+}
+
+</style>
+</head>
+<body>
+<nav class="global-nav">
+<div class="global-nav-inner">
+<a href="/" class="logo">🧮 USTariff<span>Calc</span></a>
+<button class="nav-mobile-toggle" onclick="document.querySelector('.nav-links').classList.toggle('open')">☰</button>
+<div class="nav-links">
+<a href="/">Tariff Calculator</a>
+<a href="/fba-profit-calculator.html">FBA Profit</a>
+<a href="/landed-cost-calculator.html">Landed Cost</a>
+<a href="/tariff-comparison-calculator.html">Compare Countries</a>
+<a href="/de-minimis-calculator.html">De Minimis</a>
+<a href="/guides.html">Guides</a>
+<a href="/about.html">About</a>
+</div>
+</div>
+</nav>
+<div class="banner">📦 Need just the tariff rate? Use our <a href="/">US Import Tariff Calculator</a></div>
+<header>
+<div class="badge">COMPLETE COST BREAKDOWN — 2026 RATES</div>
+<h1>Landed Cost<br>Calculator</h1>
+<p>Calculate the true total cost of importing goods into the US. Product + shipping + insurance + tariffs + customs fees — everything in one number.</p>
+</header>
+<main>
+<div class="card">
+<div class="section-title">🌍 Origin & Product</div>
+<label class="field">
+<span class="field-label">Country of Origin</span>
+<select id="lc-country" class="select">
+<option value="">Select country...</option>
+<option value="china">🇨🇳 China</option>
+<option value="vietnam">🇻🇳 Vietnam</option>
+<option value="india">🇮🇳 India</option>
+<option value="thailand">🇹🇭 Thailand</option>
+<option value="indonesia">🇮🇩 Indonesia</option>
+<option value="mexico-usmca">🇲🇽 Mexico (USMCA)</option>
+<option value="mexico-non">🇲🇽 Mexico (Non-USMCA)</option>
+<option value="canada-usmca">🇨🇦 Canada (USMCA)</option>
+<option value="canada-non">🇨🇦 Canada (Non-USMCA)</option>
+<option value="eu">🇪🇺 European Union</option>
+<option value="uk">🇬🇧 United Kingdom</option>
+<option value="japan">🇯🇵 Japan</option>
+<option value="south-korea">🇰🇷 South Korea</option>
+<option value="taiwan">🇹🇼 Taiwan</option>
+<option value="bangladesh">🇧🇩 Bangladesh</option>
+<option value="other">🌍 Other</option>
+</select>
+</label>
+<label class="field">
+<span class="field-label">Product Category</span>
+<select id="lc-product" class="select">
+<option value="">Select category...</option>
+<option value="electronics">Electronics (MFN ~2.5%)</option>
+<option value="clothing">Clothing & Apparel (MFN ~18%)</option>
+<option value="footwear">Footwear (MFN ~15%)</option>
+<option value="consumer">General Consumer Goods (MFN ~5%)</option>
+<option value="kitchen">Kitchen & Home (MFN ~4%)</option>
+<option value="toys">Toys & Games (MFN ~3%)</option>
+<option value="beauty">Beauty & Personal Care (MFN ~4%)</option>
+<option value="sports">Sports & Outdoors (MFN ~5%)</option>
+<option value="furniture">Furniture (MFN ~3%)</option>
+<option value="pet">Pet Supplies (MFN ~4%)</option>
+<option value="food">Food & Agriculture (MFN ~8%)</option>
+<option value="machinery">Machinery & Equipment (MFN ~2.5%)</option>
+<option value="chemicals">Chemicals (MFN ~4%)</option>
+<option value="plastics">Plastics & Rubber (MFN ~4%)</option>
+<option value="steel">Steel & Steel Products (MFN ~3%)</option>
+<option value="aluminum">Aluminum Products (MFN ~3%)</option>
+<option value="autos">Automobiles (MFN ~2.5%)</option>
+</select>
+</label>
+<div class="section-title" style="margin-top:24px">💰 Costs</div>
+<div class="grid-3">
+<label class="field" style="margin-bottom:0">
+<span class="field-label">Product Value (USD)</span>
+<input type="number" id="lc-value" class="input" min="0" step="0.01" placeholder="10,000">
+</label>
+<label class="field" style="margin-bottom:0">
+<span class="field-label">Shipping (USD)</span>
+<input type="number" id="lc-shipping" class="input" min="0" step="0.01" placeholder="800">
+</label>
+<label class="field" style="margin-bottom:0">
+<span class="field-label">Insurance (USD)</span>
+<input type="number" id="lc-insurance" class="input" min="0" step="0.01" placeholder="100" value="0">
+</label>
+</div>
+<div class="grid-2">
+<label class="field" style="margin-bottom:0">
+<span class="field-label">Quantity</span>
+<input type="number" id="lc-qty" class="input" min="1" value="1" placeholder="1">
+</label>
+<label class="field" style="margin-bottom:0">
+<span class="field-label">Customs Broker Fee <span class="hint">(optional)</span></span>
+<input type="number" id="lc-broker" class="input" min="0" step="0.01" placeholder="150" value="150">
+</label>
+</div>
+<div class="btn-row" style="margin-top:24px">
+<button id="lc-calc" class="btn-primary">Calculate Landed Cost</button>
+<button id="lc-reset" class="btn-secondary" style="display:none">Reset</button>
+</div>
+</div>
+
+<div id="lc-results" class="results">
+<div class="card">
+<div class="result-hero">
+<p class="label">Total Landed Cost</p>
+<p class="value" id="lr-total">$0</p>
+<p class="sub" id="lr-sub"></p>
+</div>
+
+<div class="bar-container">
+<div id="lr-bar" class="stacked-bar"></div>
+<div id="lr-legend" class="bar-legend"></div>
+</div>
+
+<div style="margin-top:24px">
+<div class="section-title">📋 Full Breakdown</div>
+<div class="breakdown-row"><span class="label">Product Value</span><span class="val" id="lr-product"></span></div>
+<div class="breakdown-row"><span class="label">Shipping</span><span class="val" id="lr-ship"></span></div>
+<div class="breakdown-row"><span class="label">Insurance</span><span class="val" id="lr-ins"></span></div>
+<div class="breakdown-row" style="border-top:1px solid rgba(255,255,255,.06);padding-top:10px"><span class="label"><strong>Customs Value (CIF)</strong></span><span class="val" id="lr-cif"></span></div>
+<div class="breakdown-row"><span class="label">MFN Base Duty</span><span class="val" id="lr-mfn"></span></div>
+<div class="breakdown-row"><span class="label">Section 122 Surcharge</span><span class="val" id="lr-s122"></span></div>
+<div class="breakdown-row"><span class="label">Section 301 (China)</span><span class="val" id="lr-s301"></span></div>
+<div class="breakdown-row"><span class="label">Section 232 (Sector)</span><span class="val" id="lr-s232"></span></div>
+<div class="breakdown-row"><span class="label"><strong>Total Duties</strong></span><span class="val" id="lr-duties"></span></div>
+<div class="breakdown-row"><span class="label">Merchandise Processing Fee</span><span class="val" id="lr-mpf"></span></div>
+<div class="breakdown-row"><span class="label">Harbor Maintenance Fee</span><span class="val" id="lr-hmf"></span></div>
+<div class="breakdown-row"><span class="label">Customs Broker Fee</span><span class="val" id="lr-broker"></span></div>
+<div class="breakdown-row total"><span class="label">Total Landed Cost</span><span class="val" id="lr-total2"></span></div>
+<div class="breakdown-row"><span class="label">Effective Tariff Rate</span><span class="val" id="lr-rate"></span></div>
+<div class="breakdown-row"><span class="label">Cost Per Unit</span><span class="val" id="lr-perunit"></span></div>
+</div>
+
+<div class="cta-box">
+<p style="color:#fff;font-weight:700;font-size:16px;margin-bottom:12px">Want the detailed tariff layer breakdown?</p>
+<a href="/">Full Tariff Calculator →</a>
+</div>
+
+<p style="font-size:11px;color:rgba(255,255,255,.2);text-align:center;line-height:1.5;margin-top:16px">Estimates only. Actual duties determined by CBP based on HTS classification. Rates as of April 2026. Section 122 expires July 24, 2026.</p>
+</div>
+</div>
+
+<div class="info-section">
+<h2>What Is Landed Cost?</h2>
+<p>Landed cost is the total price of a product once it arrives at your door. It includes the original product price, shipping, insurance, all import duties and tariffs, customs processing fees, and broker fees. It's the number that actually matters for your business — not the FOB or CIF price your supplier quotes.</p>
+<p>In 2026, tariffs can add 15-70%+ to your product cost depending on the country of origin and product type. Failing to calculate landed cost accurately is one of the most common and costly mistakes importers make.</p>
+<p>For a deeper look at how tariff layers stack, see our <a href="/">US Import Tariff Calculator</a>. For tips on reducing your duty burden, read <a href="/reduce-import-tariffs.html">7 ways to legally reduce import tariffs</a>.</p>
+</div>
+
+
+  <!-- Expert Analysis Section -->
+  <div class="info-section" style="margin-top: 24px;">
+    <h2>Why Landed Cost Is the Only Number That Matters</h2>
+    <p>In over 80 businesses I've been involved with, the single most common financial mistake in import businesses is confusing FOB price with total cost. Your supplier quotes you $5 per unit FOB Shenzhen. You calculate your margins based on $5. Then the reality hits: $1.50 in shipping, $2.50 in tariffs, $0.50 in fees, $150 in broker charges spread across 500 units. Your real cost isn't $5 — it's $8.80. And suddenly your "50% margin" product is a 20% margin product.</p>
+    <p>Landed cost captures everything. It's the number you should use for every business decision: pricing, margin analysis, supplier comparison, and inventory investment. If you're not using landed cost as your baseline, you're making decisions with incomplete information.</p>
+    <h3>The Hidden Costs Most Importers Miss</h3>
+    <p>Beyond the obvious costs (product, shipping, tariffs), experienced importers know to budget for: customs broker fees ($150-250 per entry), bond premiums ($500-2,000/year for a continuous bond), potential CBP examination fees ($300-1,000 if your container gets selected), demurrage charges if your container sits at port too long ($150-400/day), and domestic freight from the port to your warehouse ($500-2,000+ depending on distance).</p>
+    <p>My rule of thumb: add 10-15% on top of your calculated landed cost as a contingency buffer. This prevents the margin surprises that sink new importers. Better to be pleasantly surprised by lower costs than blindsided by higher ones.</p>
+  </div>
+
+<div class="info-section" style="margin-top:20px">
+<h2>Related Tools & Guides</h2>
+<a href="/" style="display:block;text-decoration:none;padding:14px 18px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:10px;margin-bottom:10px"><p style="font-size:15px;font-weight:700;color:#fff;margin:0 0 2px">US Import Tariff Calculator</p><p style="font-size:12px;color:rgba(255,255,255,.4);margin:0">All tariff layers broken down</p></a>
+<a href="/fba-profit-calculator.html" style="display:block;text-decoration:none;padding:14px 18px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:10px;margin-bottom:10px"><p style="font-size:15px;font-weight:700;color:#fff;margin:0 0 2px">FBA Profit Margin Calculator</p><p style="font-size:12px;color:rgba(255,255,255,.4);margin:0">Real margin after tariffs + Amazon fees</p></a>
+<a href="/how-to-calculate-import-duty.html" style="display:block;text-decoration:none;padding:14px 18px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:10px"><p style="font-size:15px;font-weight:700;color:#fff;margin:0 0 2px">How to Calculate Import Duty</p><p style="font-size:12px;color:rgba(255,255,255,.4);margin:0">Step-by-step guide</p></a>
+</div>
+
+<!-- Guide CTA -->
+<div style="background:rgba(249,115,22,0.06);border:1px solid rgba(249,115,22,0.18);border-radius:20px;padding:28px;display:flex;flex-direction:column;gap:16px;align-items:flex-start;margin-bottom:24px;">
+  <div>
+    <p style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:#f97316;margin-bottom:8px;">PDF Reference Guide</p>
+    <p style="font-size:20px;font-weight:900;color:#fff;margin-bottom:8px;line-height:1.2;">Want the complete picture?</p>
+    <p style="font-size:14px;color:rgba(255,255,255,0.45);line-height:1.6;max-width:460px;">Get the full 2026 US Tariff Guide — all rates, strategies, and deadlines in one 25-page reference.</p>
+  </div>
+  <a href="/tariff-guide.html" style="display:inline-flex;align-items:center;gap:8px;background:#f97316;color:#fff;font-size:14px;font-weight:800;padding:12px 22px;border-radius:10px;text-decoration:none;" onmouseover="this.style.background='#ea6c10'" onmouseout="this.style.background='#f97316'">Get the Guide — $9 →</a>
+</div>
+
+<footer>
+<div><a href="/">Tariff Calculator</a><a href="/about.html">About</a><a href="/privacy.html">Privacy</a><a href="/contact.html">Contact</a></div>
+<p>© 2026 USTariffCalc. All rights reserved.</p>
+</footer>
+</main>
+
+<script>
+const TARIFFS={china:{s122:15,s301:25},vietnam:{s122:15,s301:0},india:{s122:15,s301:0},thailand:{s122:15,s301:0},indonesia:{s122:15,s301:0},'mexico-usmca':{s122:0,s301:0},'mexico-non':{s122:15,s301:0},'canada-usmca':{s122:0,s301:0},'canada-non':{s122:15,s301:0},eu:{s122:15,s301:0},uk:{s122:15,s301:0},japan:{s122:15,s301:0},'south-korea':{s122:15,s301:0},taiwan:{s122:15,s301:0},bangladesh:{s122:15,s301:0},other:{s122:15,s301:0}};
+const MFN={electronics:2.5,clothing:18,footwear:15,consumer:5,kitchen:4,toys:3,beauty:4,sports:5,furniture:3,pet:4,food:8,machinery:2.5,chemicals:4,plastics:4,steel:3,aluminum:3,autos:2.5};
+const S232_SECTORS={steel:{rate:50},aluminum:{rate:50},autos:{rate:25}};
+function fmt(n){if(n>=1e6)return '$'+(n/1e6).toFixed(2)+'M';if(n>=1e4)return '$'+(n/1e3).toFixed(1)+'K';return '$'+n.toFixed(2)}
+
+document.getElementById('lc-calc').addEventListener('click',function(){
+var country=document.getElementById('lc-country').value;
+var product=document.getElementById('lc-product').value;
+var value=parseFloat(document.getElementById('lc-value').value)||0;
+var shipping=parseFloat(document.getElementById('lc-shipping').value)||0;
+var insurance=parseFloat(document.getElementById('lc-insurance').value)||0;
+var qty=parseInt(document.getElementById('lc-qty').value)||1;
+var broker=parseFloat(document.getElementById('lc-broker').value)||0;
+if(!country||!product||!value)return;
+
+var t=TARIFFS[country];
+var mfnRate=MFN[product]||5;
+var is232=S232_SECTORS[product];
+var s122Rate=is232?0:t.s122;
+var s301Rate=country==='china'?(is232?25:t.s301):0;
+var s232Rate=is232?is232.rate:0;
+var cif=(value+shipping+insurance)*qty;
+var mfnDuty=cif*(mfnRate/100);
+var s122Duty=cif*(s122Rate/100);
+var s301Duty=cif*(s301Rate/100);
+var s232Duty=cif*(s232Rate/100);
+var totalDuties=mfnDuty+s122Duty+s301Duty+s232Duty;
+var mpf=Math.min(Math.max(cif*.003464,31.67),614.35);
+var hmf=cif*.00125;
+var totalLanded=cif+totalDuties+mpf+hmf+broker;
+var effectiveRate=((totalLanded-cif-broker)/cif*100);
+var perUnit=totalLanded/qty;
+
+var r=document.getElementById('lc-results');
+r.classList.add('show');
+document.getElementById('lc-reset').style.display='block';
+
+document.getElementById('lr-total').textContent=fmt(totalLanded);
+document.getElementById('lr-sub').textContent=fmt(perUnit)+' per unit · '+effectiveRate.toFixed(1)+'% effective rate';
+
+var segs=[
+{label:'Product',value:value*qty,color:'#3b82f6'},
+{label:'Shipping',value:shipping*qty,color:'#06b6d4'},
+{label:'Insurance',value:insurance*qty,color:'#8b5cf6'},
+{label:'Duties',value:totalDuties,color:'#ef4444'},
+{label:'Fees',value:mpf+hmf+broker,color:'#f97316'}
+].filter(function(s){return s.value>0});
+var barTotal=segs.reduce(function(a,s){return a+s.value},0);
+document.getElementById('lr-bar').innerHTML=segs.map(function(s){return '<div class="seg" style="width:'+(s.value/barTotal*100)+'%;background:'+s.color+';min-width:2px">'+(s.value/barTotal*100>10?fmt(s.value):'')+'</div>'}).join('');
+document.getElementById('lr-legend').innerHTML=segs.map(function(s){return '<span class="item"><span class="dot" style="background:'+s.color+'"></span>'+s.label+': '+fmt(s.value)+'</span>'}).join('');
+
+document.getElementById('lr-product').textContent=fmt(value*qty);
+document.getElementById('lr-ship').textContent=fmt(shipping*qty);
+document.getElementById('lr-ins').textContent=fmt(insurance*qty);
+document.getElementById('lr-cif').textContent=fmt(cif);
+document.getElementById('lr-mfn').textContent=fmt(mfnDuty)+' ('+mfnRate+'%)';
+document.getElementById('lr-s122').textContent=fmt(s122Duty)+' ('+s122Rate+'%)';
+document.getElementById('lr-s301').textContent=fmt(s301Duty)+' ('+s301Rate+'%)';
+document.getElementById('lr-s232').textContent=fmt(s232Duty)+' ('+s232Rate+'%)';
+document.getElementById('lr-duties').textContent=fmt(totalDuties);
+document.getElementById('lr-mpf').textContent=fmt(mpf);
+document.getElementById('lr-hmf').textContent=fmt(hmf);
+document.getElementById('lr-broker').textContent=fmt(broker);
+document.getElementById('lr-total2').textContent=fmt(totalLanded);
+document.getElementById('lr-rate').textContent=effectiveRate.toFixed(1)+'%';
+document.getElementById('lr-perunit').textContent=fmt(perUnit);
+
+setTimeout(function(){r.scrollIntoView({behavior:'smooth',block:'start'})},100);
+});
+
+document.getElementById('lc-reset').addEventListener('click',function(){
+document.getElementById('lc-country').value='';
+document.getElementById('lc-product').value='';
+document.getElementById('lc-value').value='';
+document.getElementById('lc-shipping').value='';
+document.getElementById('lc-insurance').value='0';
+document.getElementById('lc-qty').value='1';
+document.getElementById('lc-broker').value='150';
+document.getElementById('lc-results').classList.remove('show');
+document.getElementById('lc-reset').style.display='none';
+});
+</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"US Landed Cost Calculator 2026","description":"Calculate total import cost including tariffs, shipping, insurance, and customs fees.","url":"https://ustariffcalc.com/landed-cost-calculator.html","applicationCategory":"BusinessApplication","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}</script>
+</body>
+</html>

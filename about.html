@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About USTariffCalc — Why I Built This Free Tariff Calculator</title>
+<meta name="description" content="The story behind USTariffCalc. Why I built a free US import tariff calculator, how the tools work, and my mission to help importers navigate the 2026 tariff landscape.">
+<meta name="google-site-verification" content="YlX6lQqHgEj_Zykv2NSI905c6CftbiLawMNsyyd40hA" />
+<link rel="canonical" href="https://ustariffcalc.com/about.html">
+<meta property="og:title" content="About USTariffCalc — Why I Built This">
+<meta property="og:description" content="The story behind the free US tariff calculator.">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="robots" content="index, follow">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4323376361842642" crossorigin="anonymous"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-5XTG86GVGY"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-5XTG86GVGY');</script>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{min-height:100vh;background:#0a0c12;color:#e2e8f0;font-family:'DM Sans',sans-serif;-webkit-font-smoothing:antialiased}
+.container{max-width:680px;margin:0 auto;padding:48px 24px 80px}
+nav{padding:16px 24px;max-width:680px;margin:0 auto}
+nav a{color:#f97316;text-decoration:none;font-size:14px;font-weight:600}
+h1{font-size:36px;font-weight:900;margin-bottom:24px;background:linear-gradient(135deg,#fff,#94a3b8);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+h2{font-size:22px;font-weight:800;color:#fff;margin:32px 0 12px}
+h3{font-size:18px;font-weight:700;color:rgba(255,255,255,.85);margin:24px 0 8px}
+p{font-size:16px;line-height:1.8;color:rgba(255,255,255,.55);margin-bottom:16px}
+a{color:#f97316}
+strong{color:rgba(255,255,255,.75)}
+.story-box{background:rgba(249,115,22,.06);border:1px solid rgba(249,115,22,.15);border-radius:14px;padding:24px;margin:24px 0}
+.story-box p{margin-bottom:10px}
+.story-box p:last-child{margin-bottom:0}
+.values{margin:24px 0}
+.value-item{display:flex;gap:14px;margin-bottom:20px}
+.value-icon{font-size:24px;flex-shrink:0;margin-top:2px}
+.value-item h3{margin:0 0 4px}
+.value-item p{margin:0;font-size:15px}
+.tools-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:20px 0}
+.tool-card{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:16px;text-decoration:none}
+.tool-card h3{font-size:14px;margin:0 0 4px;color:#fff}
+.tool-card p{font-size:13px;margin:0;color:rgba(255,255,255,.4)}
+.methodology{background:rgba(59,130,246,.06);border:1px solid rgba(59,130,246,.15);border-radius:14px;padding:24px;margin:24px 0}
+.methodology h3{color:#60a5fa;margin-top:0}
+footer{text-align:center;margin-top:48px;padding-top:24px;border-top:1px solid rgba(255,255,255,.06)}
+footer a{color:rgba(255,255,255,.4);text-decoration:none;margin:0 12px;font-size:13px}
+footer p{font-size:11px;color:rgba(255,255,255,.2);margin-top:12px}
+@media(max-width:500px){.tools-grid{grid-template-columns:1fr}}
+
+/* Global Navigation */
+.global-nav {
+  background: rgba(255,255,255,0.03);
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  padding: 0 24px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+.global-nav-inner {
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 56px;
+}
+.global-nav .logo {
+  font-size: 16px;
+  font-weight: 900;
+  color: #fff;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.global-nav .logo span {
+  color: #f97316;
+}
+.global-nav .nav-links {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+.global-nav .nav-links a {
+  font-size: 13px;
+  font-weight: 600;
+  color: rgba(255,255,255,0.45);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.global-nav .nav-links a:hover {
+  color: #f97316;
+}
+.global-nav .nav-links a.active {
+  color: #f97316;
+}
+.nav-mobile-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: rgba(255,255,255,0.5);
+  font-size: 24px;
+  cursor: pointer;
+}
+@media (max-width: 600px) {
+  .global-nav .nav-links {
+    display: none;
+    position: absolute;
+    top: 56px;
+    left: 0;
+    right: 0;
+    background: #0d0f17;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+    flex-direction: column;
+    padding: 16px 24px;
+    gap: 16px;
+  }
+  .global-nav .nav-links.open {
+    display: flex;
+  }
+  .nav-mobile-toggle {
+    display: block;
+  }
+}
+
+</style>
+</head>
+<body>
+<nav class="global-nav">
+<div class="global-nav-inner">
+<a href="/" class="logo">🧮 USTariff<span>Calc</span></a>
+<button class="nav-mobile-toggle" onclick="document.querySelector('.nav-links').classList.toggle('open')">☰</button>
+<div class="nav-links">
+<a href="/">Tariff Calculator</a>
+<a href="/fba-profit-calculator.html">FBA Profit</a>
+<a href="/landed-cost-calculator.html">Landed Cost</a>
+<a href="/tariff-comparison-calculator.html">Compare Countries</a>
+<a href="/de-minimis-calculator.html">De Minimis</a>
+<a href="/guides.html">Guides</a>
+<a href="/about.html">About</a>
+</div>
+</div>
+</nav>
+
+<div class="container">
+<h1>About USTariffCalc</h1>
+
+<div class="story-box">
+<p><strong>The short version:</strong> I'm an entrepreneur who got frustrated trying to figure out how much I'd actually pay in tariffs on imported goods. The information was scattered across government sites, trade law blogs, and outdated calculators. So I built the tool I wished existed.</p>
+</div>
+
+<h2>Why I Built This</h2>
+
+<p>In February 2026, the US tariff landscape changed overnight. The Supreme Court struck down IEEPA tariffs, and within hours, a new 15% global surcharge was imposed under Section 122. Suddenly, every importer in the country needed to recalculate their costs — and there was no simple, free tool to do it.</p>
+
+<p>I watched small business owners in online communities scramble to understand how much they'd owe on their next shipment. FBA sellers were posting panicked questions about margin calculations. Temu and AliExpress buyers were getting surprise duty bills at delivery. The information was out there, but it was buried in legal jargon and government PDFs.</p>
+
+<p>So I built USTariffCalc. One page, all four tariff layers, instant results. No signup required, no paywall, no complexity. Just enter your country, product, and value — and see what you'll actually pay.</p>
+
+<h2>The Problem I Saw Firsthand</h2>
+
+<p>I run several online businesses and have dealt with import costs directly. When the IEEPA tariffs hit in April 2025, I spent hours trying to figure out the actual duty rate on a shipment of goods from Asia. I quickly discovered that:</p>
+
+<p><strong>Government sites are accurate but impenetrable.</strong> The HTS database has over 10,000 product codes. The Federal Register publishes tariff changes in dense legal language. Unless you're a trade lawyer, you can't navigate it efficiently.</p>
+
+<p><strong>Existing calculators are either too simple or too complex.</strong> Some show one flat rate and ignore the stacking. Others require you to know your exact HTS code before you can even start. There was nothing in the middle — accurate enough to be useful, simple enough for a regular person.</p>
+
+<p><strong>The stacking problem is real.</strong> Most people don't realize that four separate tariff programs apply simultaneously. A product from China can face MFN duty + Section 301 + Section 122 = 42-72% total. But Section 232 products are exempt from Section 122. And USMCA goods skip Section 122 entirely. These exemptions matter — they save thousands of dollars — but you'd never know they existed from a simple rate table.</p>
+
+<p>That's the gap USTariffCalc fills. We handle the stacking, the exemptions, and the fees automatically. You just pick your country and product.</p>
+
+<h2>What Makes This Different</h2>
+
+<div class="values">
+<div class="value-item">
+<span class="value-icon">📊</span>
+<div>
+<h3>All four tariff layers stacked correctly</h3>
+<p>MFN base duty + Section 122 surcharge + Section 301 (China) + Section 232 (sector-specific). Most calculators show one or two layers. We show all four and how they combine.</p>
+</div>
+</div>
+<div class="value-item">
+<span class="value-icon">🔄</span>
+<div>
+<h3>Exemption logic built in</h3>
+<p>Section 232 products are exempt from Section 122. USMCA goods are exempt from Section 122. Our calculator handles these exemptions automatically — most tools don't.</p>
+</div>
+</div>
+<div class="value-item">
+<span class="value-icon">💰</span>
+<div>
+<h3>Real processing fees included</h3>
+<p>Merchandise Processing Fee (0.3464%, capped at $614.35) and Harbor Maintenance Fee (0.125%) are included in every calculation. Small percentages that add real dollars on large shipments.</p>
+</div>
+</div>
+<div class="value-item">
+<span class="value-icon">🌍</span>
+<div>
+<h3>20 country-specific profiles</h3>
+<p>Not just "China vs. everyone else." We account for USMCA exemptions, UK preferential Section 232 rates, and individual Section 301 exposure by country.</p>
+</div>
+</div>
+</div>
+
+<h2>Our Tools</h2>
+
+<div class="tools-grid">
+<a href="/" class="tool-card">
+<h3>🧮 Tariff Calculator</h3>
+<p>All tariff layers in one calculation</p>
+</a>
+<a href="/fba-profit-calculator.html" class="tool-card">
+<h3>📊 FBA Profit Calculator</h3>
+<p>Real margins after tariffs + Amazon fees</p>
+</a>
+<a href="/landed-cost-calculator.html" class="tool-card">
+<h3>📦 Landed Cost Calculator</h3>
+<p>Total import cost breakdown</p>
+</a>
+<a href="/tariff-comparison-calculator.html" class="tool-card">
+<h3>🔄 Country Comparison</h3>
+<p>Compare tariff costs side by side</p>
+</a>
+<a href="/de-minimis-calculator.html" class="tool-card">
+<h3>🔍 De Minimis Calculator</h3>
+<p>Check if your package is duty-free</p>
+</a>
+<a href="/guides.html" class="tool-card">
+<h3>📚 29+ Guides</h3>
+<p>Articles on tariffs, sourcing, and trade</p>
+</a>
+</div>
+
+<h2>How We Get Our Data</h2>
+
+<div class="methodology">
+<h3>Methodology & Sources</h3>
+<p>Our tariff rates come from publicly available data published by official US government sources:</p>
+<p><strong>MFN Base Rates:</strong> US International Trade Commission Harmonized Tariff Schedule (hts.usitc.gov). We use category averages since individual HTS codes number in the tens of thousands. For precise rates on specific products, we always recommend looking up your exact HTS code or consulting a customs broker.</p>
+<p><strong>Section 122 Rates:</strong> Executive Order published in the Federal Register, February 24, 2026. The 15% rate is uniform across all non-exempt goods.</p>
+<p><strong>Section 301 Rates:</strong> Office of the United States Trade Representative (USTR) published lists and Federal Register notices. Rates range from 7.5% (List 4A consumer goods) to 100% (Chinese EVs).</p>
+<p><strong>Section 232 Rates:</strong> US Department of Commerce, Bureau of Industry and Security proclamations. Steel and aluminum at 50% (25% for UK), automobiles at 25%, semiconductors at 25%.</p>
+<p><strong>Processing Fees:</strong> US Customs and Border Protection published fee schedules.</p>
+<p>We monitor the Federal Register, USTR announcements, and CBP updates daily and update rates within 48 hours of any official changes. Last verified: May 2026.</p>
+</div>
+
+<h2>Editorial Standards</h2>
+
+<p>Every article on USTariffCalc is researched using primary sources — government publications, official trade data, and established trade law resources. We don't republish press releases or aggregate other blogs. When we cite a tariff rate, we verify it against the original government source.</p>
+
+<p>We clearly distinguish between established facts (current tariff rates) and analysis/opinion (predictions about future policy changes). When the situation is uncertain — like what will replace Section 122 after July 24 — we present multiple scenarios rather than making definitive predictions.</p>
+
+<p>If we make an error, we correct it promptly and note the correction. Accuracy is our top priority — importers make real financial decisions based on tariff information, and wrong numbers cost real money.</p>
+
+<h2>Affiliate Disclosure</h2>
+
+<p>Some links on USTariffCalc are affiliate partnerships with tools we genuinely use and recommend for importers, including Helium 10 (product research) and Easyship (shipping and duty calculation). These partnerships help keep our calculators free. We only partner with tools that are directly relevant to our audience, and our editorial content is never influenced by affiliate relationships.</p>
+
+<h2>Contact</h2>
+
+<p>Questions, corrections, or feedback? I read every email.</p>
+<p><a href="mailto:contact@ustariffcalc.com">contact@ustariffcalc.com</a></p>
+<p>Found an error in our rates? Please let me know — accuracy is our top priority and I'll update it within 24 hours.</p>
+
+<footer>
+<div><a href="/">Calculator</a><a href="/guides.html">Guides</a><a href="/privacy.html">Privacy</a><a href="/contact.html">Contact</a></div>
+<p>© 2026 USTariffCalc. All rights reserved.</p>
+</footer>
+</div>
+</body>
+</html>

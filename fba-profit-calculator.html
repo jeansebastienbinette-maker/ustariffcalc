@@ -1,0 +1,871 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Amazon FBA Profit Margin Calculator With Tariffs (2026) — Free Tool</title>
+<meta name="description" content="Free Amazon FBA profit calculator with US tariff costs built in. Calculate your real margin after import duties, Amazon fees, and shipping. Updated for 2026 tariff rates.">
+<meta name="google-site-verification" content="YlX6lQqHgEj_Zykv2NSI905c6CftbiLawMNsyyd40hA" />
+<link rel="canonical" href="https://ustariffcalc.com/fba-profit-calculator.html">
+<meta property="og:title" content="Amazon FBA Profit Margin Calculator With Tariffs (2026)">
+<meta property="og:description" content="Calculate your real FBA profit after import duties, Amazon fees, and shipping. The only calculator that includes 2026 tariff costs.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://ustariffcalc.com/fba-profit-calculator.html">
+<meta property="og:site_name" content="USTariffCalc">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="robots" content="index, follow">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4323376361842642" crossorigin="anonymous"></script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-5XTG86GVGY"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-5XTG86GVGY');
+</script>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  min-height: 100vh;
+  background: #0a0c12;
+  color: #e2e8f0;
+  font-family: 'DM Sans', -apple-system, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+.banner {
+  background: linear-gradient(90deg, #2563eb, #7c3aed);
+  padding: 10px 16px;
+  text-align: center;
+  color: #fff;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+.banner a { color: #fff; text-decoration: underline; }
+header {
+  padding: 48px 24px 32px;
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+  background: radial-gradient(ellipse at 50% 0%, rgba(37,99,235,0.08) 0%, transparent 70%);
+}
+.badge {
+  display: inline-block;
+  padding: 4px 14px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 700;
+  background: rgba(37,99,235,0.15);
+  color: #60a5fa;
+  letter-spacing: 0.1em;
+  margin-bottom: 16px;
+  border: 1px solid rgba(37,99,235,0.25);
+}
+h1 {
+  font-size: clamp(28px, 5vw, 46px);
+  font-weight: 900;
+  line-height: 1.1;
+  margin: 0 0 16px;
+  background: linear-gradient(135deg, #ffffff, #94a3b8);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+header p {
+  color: rgba(255,255,255,0.5);
+  font-size: 16px;
+  max-width: 540px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+main {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 0 20px 80px;
+}
+.card {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 20px;
+  padding: 32px 28px;
+  margin-bottom: 24px;
+}
+.section-title {
+  font-size: 15px;
+  font-weight: 800;
+  color: rgba(255,255,255,0.5);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 18px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+.field { display: block; margin-bottom: 18px; }
+.field-label {
+  font-size: 12px;
+  font-weight: 700;
+  color: rgba(255,255,255,0.4);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: 6px;
+}
+.field-label .hint { font-weight: 400; text-transform: none; color: rgba(255,255,255,0.3); }
+.input, .select {
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 10px;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.1);
+  color: #fff;
+  font-size: 15px;
+  outline: none;
+  font-family: 'DM Sans', sans-serif;
+  transition: border-color 0.2s;
+}
+.input:focus, .select:focus { border-color: rgba(37,99,235,0.5); }
+.select { cursor: pointer; appearance: none; }
+.select option { background: #1a1d2e; }
+.grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  margin-bottom: 18px;
+}
+.grid-3 {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 14px;
+  margin-bottom: 18px;
+}
+.btn-primary {
+  width: 100%;
+  padding: 16px 0;
+  border-radius: 14px;
+  border: none;
+  background: linear-gradient(135deg, #2563eb, #7c3aed);
+  color: #fff;
+  font-size: 16px;
+  font-weight: 800;
+  cursor: pointer;
+  font-family: 'DM Sans', sans-serif;
+  letter-spacing: 0.02em;
+  transition: opacity 0.2s, transform 0.1s;
+}
+.btn-primary:hover { opacity: 0.9; }
+.btn-primary:active { transform: scale(0.98); }
+.btn-primary:disabled { background: rgba(255,255,255,0.1); cursor: not-allowed; }
+.btn-row { display: flex; gap: 12px; }
+.btn-secondary {
+  padding: 16px 24px;
+  border-radius: 14px;
+  border: 1px solid rgba(255,255,255,0.15);
+  background: transparent;
+  color: rgba(255,255,255,0.5);
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: 'DM Sans', sans-serif;
+}
+
+/* Results */
+.results { display: none; }
+.results.show { display: block; }
+.result-hero {
+  text-align: center;
+  padding: 24px 0;
+  margin-bottom: 20px;
+}
+.result-hero .label {
+  font-size: 12px;
+  font-weight: 700;
+  color: rgba(255,255,255,0.4);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+.result-hero .value {
+  font-size: 52px;
+  font-weight: 900;
+  font-family: 'JetBrains Mono', monospace;
+}
+.result-hero .sub {
+  font-size: 14px;
+  color: rgba(255,255,255,0.35);
+  margin-top: 4px;
+}
+.profit-positive { background: linear-gradient(135deg, #22c55e, #10b981); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+.profit-negative { background: linear-gradient(135deg, #ef4444, #f97316); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+.profit-warning { background: linear-gradient(135deg, #f59e0b, #f97316); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+
+.breakdown-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.04);
+}
+.breakdown-row:last-child { border-bottom: none; }
+.breakdown-row .label { font-size: 14px; color: rgba(255,255,255,0.5); }
+.breakdown-row .val { font-size: 15px; font-weight: 700; font-family: 'JetBrains Mono', monospace; color: rgba(255,255,255,0.7); }
+.breakdown-row.total { border-top: 2px solid rgba(255,255,255,0.1); padding-top: 14px; margin-top: 4px; }
+.breakdown-row.total .label { font-weight: 800; color: #fff; font-size: 15px; }
+.breakdown-row.total .val { color: #fff; font-size: 17px; }
+.breakdown-row.highlight .val { color: #22c55e; }
+.breakdown-row.loss .val { color: #ef4444; }
+
+.bar-container { margin: 20px 0; }
+.bar-label-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 11px;
+  color: rgba(255,255,255,0.4);
+  margin-bottom: 6px;
+}
+.stacked-bar {
+  display: flex;
+  height: 36px;
+  border-radius: 8px;
+  overflow: hidden;
+}
+.stacked-bar .seg {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+  font-weight: 700;
+  color: #fff;
+  transition: width 0.5s ease;
+}
+.bar-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 8px;
+}
+.bar-legend .item {
+  font-size: 11px;
+  color: rgba(255,255,255,0.45);
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+.bar-legend .dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 2px;
+  display: inline-block;
+}
+
+.verdict {
+  border-radius: 14px;
+  padding: 20px;
+  margin: 20px 0;
+  text-align: center;
+}
+.verdict-good { background: rgba(34,197,94,0.08); border: 1px solid rgba(34,197,94,0.2); }
+.verdict-ok { background: rgba(245,158,11,0.08); border: 1px solid rgba(245,158,11,0.2); }
+.verdict-bad { background: rgba(239,68,68,0.08); border: 1px solid rgba(239,68,68,0.2); }
+.verdict .icon { font-size: 32px; margin-bottom: 8px; }
+.verdict .title { font-size: 18px; font-weight: 800; color: #fff; margin-bottom: 4px; }
+.verdict .desc { font-size: 14px; color: rgba(255,255,255,0.5); line-height: 1.5; }
+
+.cta-box {
+  background: linear-gradient(135deg, rgba(37,99,235,0.12), rgba(124,58,237,0.08));
+  border: 1px solid rgba(37,99,235,0.25);
+  border-radius: 14px;
+  padding: 24px;
+  text-align: center;
+  margin: 28px 0;
+}
+.cta-box a {
+  display: inline-block;
+  padding: 12px 28px;
+  background: linear-gradient(135deg, #f97316, #ef4444);
+  color: #fff;
+  text-decoration: none;
+  border-radius: 10px;
+  font-weight: 800;
+  font-size: 15px;
+}
+
+.info-section {
+  margin-top: 28px;
+  background: rgba(255,255,255,0.02);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 20px;
+  padding: 28px 24px;
+}
+.info-section h2 { font-size: 20px; font-weight: 800; color: #fff; margin-bottom: 14px; }
+.info-section p { font-size: 15px; color: rgba(255,255,255,0.45); line-height: 1.7; margin-bottom: 14px; }
+.info-section a { color: #f97316; }
+
+footer {
+  text-align: center;
+  margin-top: 40px;
+  padding: 20px 0;
+}
+footer a { color: rgba(255,255,255,0.4); text-decoration: none; margin: 0 12px; font-size: 13px; }
+footer p { font-size: 11px; color: rgba(255,255,255,0.2); margin-top: 12px; line-height: 1.6; }
+
+@media (max-width: 500px) {
+  .card { padding: 24px 18px; }
+  .grid-2, .grid-3 { grid-template-columns: 1fr; }
+  .result-hero .value { font-size: 40px; }
+}
+
+/* Global Navigation */
+.global-nav {
+  background: rgba(255,255,255,0.03);
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  padding: 0 24px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+.global-nav-inner {
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 56px;
+}
+.global-nav .logo {
+  font-size: 16px;
+  font-weight: 900;
+  color: #fff;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.global-nav .logo span {
+  color: #f97316;
+}
+.global-nav .nav-links {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+.global-nav .nav-links a {
+  font-size: 13px;
+  font-weight: 600;
+  color: rgba(255,255,255,0.45);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.global-nav .nav-links a:hover {
+  color: #f97316;
+}
+.global-nav .nav-links a.active {
+  color: #f97316;
+}
+.nav-mobile-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: rgba(255,255,255,0.5);
+  font-size: 24px;
+  cursor: pointer;
+}
+@media (max-width: 600px) {
+  .global-nav .nav-links {
+    display: none;
+    position: absolute;
+    top: 56px;
+    left: 0;
+    right: 0;
+    background: #0d0f17;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+    flex-direction: column;
+    padding: 16px 24px;
+    gap: 16px;
+  }
+  .global-nav .nav-links.open {
+    display: flex;
+  }
+  .nav-mobile-toggle {
+    display: block;
+  }
+}
+
+</style>
+</head>
+<body>
+<nav class="global-nav">
+<div class="global-nav-inner">
+<a href="/" class="logo">🧮 USTariff<span>Calc</span></a>
+<button class="nav-mobile-toggle" onclick="document.querySelector('.nav-links').classList.toggle('open')">☰</button>
+<div class="nav-links">
+<a href="/">Tariff Calculator</a>
+<a href="/fba-profit-calculator.html">FBA Profit</a>
+<a href="/landed-cost-calculator.html">Landed Cost</a>
+<a href="/tariff-comparison-calculator.html">Compare Countries</a>
+<a href="/de-minimis-calculator.html">De Minimis</a>
+<a href="/guides.html">Guides</a>
+<a href="/about.html">About</a>
+</div>
+</div>
+</nav>
+
+<!-- Banner -->
+<div class="banner">
+  📊 Need tariff rates first? Use our <a href="/">US Import Tariff Calculator</a>
+</div>
+
+<!-- Header -->
+<header>
+  <div class="badge">FREE TOOL — INCLUDES 2026 TARIFF RATES</div>
+  <h1>Amazon FBA Profit<br>Margin Calculator</h1>
+  <p>The only profit calculator that factors in 2026 US tariff costs. See your real margin after import duties, Amazon fees, shipping, and COGS.</p>
+</header>
+
+<!-- Calculator -->
+<main>
+  <div class="card">
+    <!-- Product Info -->
+    <div class="section-title">📦 Product Details</div>
+
+    <div class="grid-2">
+      <label class="field" style="margin-bottom:0">
+        <span class="field-label">Amazon Selling Price (USD)</span>
+        <input type="number" id="sell-price" class="input" min="0" step="0.01" placeholder="29.99">
+      </label>
+      <label class="field" style="margin-bottom:0">
+        <span class="field-label">Units Per Month</span>
+        <input type="number" id="units-month" class="input" min="1" value="100" placeholder="100">
+      </label>
+    </div>
+
+    <!-- Sourcing -->
+    <div class="section-title" style="margin-top: 24px;">🌍 Sourcing & Import Costs</div>
+
+    <label class="field">
+      <span class="field-label">Country of Origin</span>
+      <select id="country" class="select">
+        <option value="">Select country...</option>
+        <option value="china">🇨🇳 China</option>
+        <option value="vietnam">🇻🇳 Vietnam</option>
+        <option value="india">🇮🇳 India</option>
+        <option value="thailand">🇹🇭 Thailand</option>
+        <option value="indonesia">🇮🇩 Indonesia</option>
+        <option value="mexico-usmca">🇲🇽 Mexico (USMCA)</option>
+        <option value="mexico-non">🇲🇽 Mexico (Non-USMCA)</option>
+        <option value="canada-usmca">🇨🇦 Canada (USMCA)</option>
+        <option value="canada-non">🇨🇦 Canada (Non-USMCA)</option>
+        <option value="taiwan">🇹🇼 Taiwan</option>
+        <option value="bangladesh">🇧🇩 Bangladesh</option>
+        <option value="eu">🇪🇺 European Union</option>
+        <option value="uk">🇬🇧 United Kingdom</option>
+        <option value="other">🌍 Other</option>
+      </select>
+    </label>
+
+    <label class="field">
+      <span class="field-label">Product Category</span>
+      <select id="product-cat" class="select">
+        <option value="">Select category...</option>
+        <option value="electronics">Electronics (MFN ~2.5%)</option>
+        <option value="clothing">Clothing & Apparel (MFN ~18%)</option>
+        <option value="footwear">Footwear (MFN ~15%)</option>
+        <option value="consumer">General Consumer Goods (MFN ~5%)</option>
+        <option value="kitchen">Kitchen & Home (MFN ~4%)</option>
+        <option value="toys">Toys & Games (MFN ~3%)</option>
+        <option value="beauty">Beauty & Personal Care (MFN ~4%)</option>
+        <option value="sports">Sports & Outdoors (MFN ~5%)</option>
+        <option value="furniture">Furniture (MFN ~3%)</option>
+        <option value="pet">Pet Supplies (MFN ~4%)</option>
+        <option value="food">Food & Agriculture (MFN ~8%)</option>
+      </select>
+    </label>
+
+    <div class="grid-2">
+      <label class="field" style="margin-bottom:0">
+        <span class="field-label">Product Cost Per Unit (FOB)</span>
+        <input type="number" id="product-cost" class="input" min="0" step="0.01" placeholder="5.00">
+      </label>
+      <label class="field" style="margin-bottom:0">
+        <span class="field-label">Shipping Per Unit to US</span>
+        <input type="number" id="shipping-cost" class="input" min="0" step="0.01" placeholder="1.50">
+      </label>
+    </div>
+
+    <!-- Amazon Fees -->
+    <div class="section-title" style="margin-top: 24px;">🏷️ Amazon Fees</div>
+
+    <div class="grid-3">
+      <label class="field" style="margin-bottom:0">
+        <span class="field-label">Referral Fee % <span class="hint">(usually 15%)</span></span>
+        <input type="number" id="referral-fee" class="input" min="0" max="100" value="15" step="0.1">
+      </label>
+      <label class="field" style="margin-bottom:0">
+        <span class="field-label">FBA Fee Per Unit <span class="hint">(USD)</span></span>
+        <input type="number" id="fba-fee" class="input" min="0" step="0.01" placeholder="3.50" value="3.50">
+      </label>
+      <label class="field" style="margin-bottom:0">
+        <span class="field-label">Other Costs/Unit <span class="hint">(ads, etc.)</span></span>
+        <input type="number" id="other-costs" class="input" min="0" step="0.01" placeholder="0" value="0">
+      </label>
+    </div>
+
+    <!-- Buttons -->
+    <div class="btn-row">
+      <button id="calc-btn" class="btn-primary">Calculate Profit Margin</button>
+      <button id="reset-btn" class="btn-secondary" style="display:none;">Reset</button>
+    </div>
+  </div>
+
+  <!-- Results -->
+  <div id="results" class="results">
+    <div class="card">
+      <!-- Profit Hero -->
+      <div class="result-hero">
+        <p class="label">Net Profit Per Unit</p>
+        <p class="value" id="r-profit">$0.00</p>
+        <p class="sub" id="r-margin-text"></p>
+      </div>
+
+      <!-- Verdict -->
+      <div id="verdict" class="verdict verdict-good">
+        <div class="icon" id="v-icon">✅</div>
+        <div class="title" id="v-title">Healthy Margin</div>
+        <div class="desc" id="v-desc"></div>
+      </div>
+
+      <!-- Visual Bar -->
+      <div class="bar-container">
+        <div class="bar-label-row">
+          <span>Cost Breakdown Per Unit</span>
+          <span id="bar-total"></span>
+        </div>
+        <div id="stacked-bar" class="stacked-bar"></div>
+        <div id="bar-legend" class="bar-legend"></div>
+      </div>
+
+      <!-- Breakdown -->
+      <div style="margin-top: 24px;">
+        <div class="section-title">💰 Revenue</div>
+        <div class="breakdown-row">
+          <span class="label">Selling Price</span>
+          <span class="val" id="r-sell"></span>
+        </div>
+      </div>
+
+      <div style="margin-top: 16px;">
+        <div class="section-title">📉 Costs Per Unit</div>
+        <div class="breakdown-row">
+          <span class="label">Product Cost (FOB)</span>
+          <span class="val" id="r-cogs"></span>
+        </div>
+        <div class="breakdown-row">
+          <span class="label">Shipping to US</span>
+          <span class="val" id="r-ship"></span>
+        </div>
+        <div class="breakdown-row">
+          <span class="label">Import Duty (Tariff)</span>
+          <span class="val" id="r-duty"></span>
+        </div>
+        <div class="breakdown-row">
+          <span class="label" style="padding-left: 16px; font-size: 12px;">↳ Effective tariff rate</span>
+          <span class="val" id="r-duty-rate" style="font-size: 13px; color: rgba(255,255,255,0.4);"></span>
+        </div>
+        <div class="breakdown-row">
+          <span class="label">Amazon Referral Fee</span>
+          <span class="val" id="r-referral"></span>
+        </div>
+        <div class="breakdown-row">
+          <span class="label">Amazon FBA Fee</span>
+          <span class="val" id="r-fba"></span>
+        </div>
+        <div class="breakdown-row">
+          <span class="label">Other Costs</span>
+          <span class="val" id="r-other"></span>
+        </div>
+        <div class="breakdown-row total">
+          <span class="label">Total Cost Per Unit</span>
+          <span class="val" id="r-total-cost"></span>
+        </div>
+      </div>
+
+      <div style="margin-top: 16px;">
+        <div class="section-title">📊 Summary</div>
+        <div class="breakdown-row highlight" id="r-profit-row">
+          <span class="label">Net Profit Per Unit</span>
+          <span class="val" id="r-profit2"></span>
+        </div>
+        <div class="breakdown-row">
+          <span class="label">Profit Margin</span>
+          <span class="val" id="r-margin"></span>
+        </div>
+        <div class="breakdown-row">
+          <span class="label">ROI</span>
+          <span class="val" id="r-roi"></span>
+        </div>
+        <div class="breakdown-row" style="border-top: 1px solid rgba(255,255,255,0.06); padding-top: 12px; margin-top: 8px;">
+          <span class="label"><strong>Monthly Revenue</strong></span>
+          <span class="val" id="r-monthly-rev"></span>
+        </div>
+        <div class="breakdown-row highlight" id="r-monthly-profit-row">
+          <span class="label"><strong>Monthly Profit</strong></span>
+          <span class="val" id="r-monthly-profit"></span>
+        </div>
+      </div>
+
+      <!-- CTA -->
+      <div class="cta-box">
+        <p style="color:#fff; font-weight:700; font-size:16px; margin-bottom:12px;">Want the detailed tariff breakdown?</p>
+        <p style="color:rgba(255,255,255,0.5); font-size:13px; margin-bottom:16px;">See exactly how MFN, Section 122, Section 301, and Section 232 apply to your product.</p>
+        <a href="/">Full Tariff Calculator →</a>
+      </div>
+
+      <p style="font-size:11px; color:rgba(255,255,255,0.2); text-align:center; line-height:1.5; margin-top:16px;">
+        Estimates for planning purposes only. Tariff rates are averages for product categories — actual rates depend on specific HTS codes.
+        Amazon fees vary by category and product dimensions. Always verify with your customs broker and Amazon Seller Central.
+      </p>
+    </div>
+  </div>
+
+  <!-- Info Section -->
+  <div class="info-section">
+    <h2>Why Tariffs Matter for Your FBA Margins</h2>
+    <p>Most FBA profit calculators ignore import duties entirely. That's a massive blind spot in 2026, when effective tariff rates on Chinese goods range from 25% to over 70%. A product that looks profitable on paper can be a money loser once tariffs are factored in.</p>
+    <p>This calculator is different — it automatically applies the correct tariff layers based on your sourcing country and product category, including the 15% Section 122 surcharge (expiring July 24, 2026), Section 301 tariffs on Chinese goods, and MFN base duties.</p>
+    <p>For the full tariff breakdown with all four layers explained, use our <a href="/">US Import Tariff Calculator</a>. For strategies to lower your duty costs, read our guide on <a href="/reduce-import-tariffs.html">7 ways to legally reduce import tariffs</a>.</p>
+  </div>
+
+  
+  <!-- Expert Analysis Section -->
+  <div class="info-section" style="margin-top: 24px;">
+    <h2>Why Most FBA Profit Calculations Are Wrong in 2026</h2>
+    <p>I've reviewed dozens of Amazon FBA profit calculators, and almost none of them include import tariffs. That was fine before 2018 when tariffs on most consumer goods were 0-5%. But in 2026, with effective rates of 25-60% on Chinese goods, ignoring tariffs is like ignoring your cost of goods — it makes your entire profit calculation meaningless.</p>
+    <p>Here's a real scenario I encountered: A seller found a kitchen gadget on Alibaba for $4.50, shipping $1.50, selling on Amazon for $24.99. Using a standard FBA calculator without tariffs, the margin looked like 45%. After factoring in 44% tariffs on the $6.00 customs value ($2.64 in duties), the real margin dropped to 34%. That's the difference between a product you'd aggressively invest in PPC for and one where you'd be cautious.</p>
+    <p>This calculator was built specifically to solve that problem. It's the only free FBA margin tool I know of that automatically applies the correct 2026 tariff rates based on your sourcing country and product category.</p>
+    <h3>Understanding the FBA Cost Stack</h3>
+    <p>Your actual cost per unit as an FBA seller includes layers that many beginners underestimate. The product cost (FOB price from your supplier) is just the starting point. Add shipping to US ($1-5/unit for sea freight), tariffs (25-60% of customs value from China), Amazon's referral fee (typically 15% of selling price), FBA fulfillment fee ($3-8 depending on size and weight), and PPC advertising (typically 15-25% of revenue for new products).</p>
+    <p>When you stack all of these, a product that looks profitable at the FOB price level may only yield a 10-15% net margin — and that's before returns, storage fees, and the inevitable price competition from other sellers.</p>
+    <h3>The Sourcing Country Decision</h3>
+    <p>One of the most impactful decisions you can make as an FBA seller in 2026 is where you source from. The tariff gap between China and alternatives like Vietnam, India, or Mexico (USMCA) can be the difference between a profitable product and a money loser. Use our <a href="/tariff-comparison-calculator.html">Country Comparison Calculator</a> to model different scenarios before committing to a supplier.</p>
+  </div>
+
+<!-- Related Articles -->
+  <div class="info-section" style="margin-top: 20px;">
+    <h2>Related Guides</h2>
+    <a href="/tariffs-amazon-fba-sellers-2026.html" style="display:block;text-decoration:none;padding:14px 18px;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);border-radius:10px;margin-bottom:10px;">
+      <p style="font-size:15px;font-weight:700;color:#fff;margin:0 0 2px;">Tariffs on Amazon FBA Products 2026</p>
+      <p style="font-size:12px;color:rgba(255,255,255,0.4);margin:0;">Complete guide with rates by category and strategies</p>
+    </a>
+    <a href="/tariffs-on-chinese-goods-2026.html" style="display:block;text-decoration:none;padding:14px 18px;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);border-radius:10px;margin-bottom:10px;">
+      <p style="font-size:15px;font-weight:700;color:#fff;margin:0 0 2px;">US Tariffs on Chinese Goods 2026</p>
+      <p style="font-size:12px;color:rgba(255,255,255,0.4);margin:0;">All four tariff layers explained</p>
+    </a>
+    <a href="/de-minimis-china-2026.html" style="display:block;text-decoration:none;padding:14px 18px;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);border-radius:10px;">
+      <p style="font-size:15px;font-weight:700;color:#fff;margin:0 0 2px;">Is the $800 De Minimis Exemption Still Valid?</p>
+      <p style="font-size:12px;color:rgba(255,255,255,0.4);margin:0;">What changed for small shipments from China</p>
+    </a>
+  </div>
+
+  <!-- Guide CTA -->
+  <div style="background:rgba(249,115,22,0.06);border:1px solid rgba(249,115,22,0.18);border-radius:20px;padding:28px;display:flex;flex-direction:column;gap:16px;align-items:flex-start;margin-bottom:24px;">
+    <div>
+      <p style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:#f97316;margin-bottom:8px;">PDF Reference Guide</p>
+      <p style="font-size:20px;font-weight:900;color:#fff;margin-bottom:8px;line-height:1.2;">Want the complete picture?</p>
+      <p style="font-size:14px;color:rgba(255,255,255,0.45);line-height:1.6;max-width:460px;">Get the full 2026 US Tariff Guide — all rates, strategies, and deadlines in one 25-page reference.</p>
+    </div>
+    <a href="/tariff-guide.html" style="display:inline-flex;align-items:center;gap:8px;background:#f97316;color:#fff;font-size:14px;font-weight:800;padding:12px 22px;border-radius:10px;text-decoration:none;" onmouseover="this.style.background='#ea6c10'" onmouseout="this.style.background='#f97316'">Get the Guide — $9 →</a>
+  </div>
+
+  <footer>
+    <div><a href="/">Tariff Calculator</a><a href="/about.html">About</a><a href="/privacy.html">Privacy</a><a href="/contact.html">Contact</a></div>
+    <p>© 2026 USTariffCalc. All rights reserved.</p>
+  </footer>
+</main>
+
+<script>
+// Tariff data
+const TARIFFS = {
+  china:       { s122: 15, s301: 25 },
+  vietnam:     { s122: 15, s301: 0 },
+  india:       { s122: 15, s301: 0 },
+  thailand:    { s122: 15, s301: 0 },
+  indonesia:   { s122: 15, s301: 0 },
+  'mexico-usmca': { s122: 0, s301: 0 },
+  'mexico-non':   { s122: 15, s301: 0 },
+  'canada-usmca': { s122: 0, s301: 0 },
+  'canada-non':   { s122: 15, s301: 0 },
+  taiwan:      { s122: 15, s301: 0 },
+  bangladesh:  { s122: 15, s301: 0 },
+  eu:          { s122: 15, s301: 0 },
+  uk:          { s122: 15, s301: 0 },
+  other:       { s122: 15, s301: 0 },
+};
+const MFN_RATES = {
+  electronics: 2.5, clothing: 18, footwear: 15, consumer: 5,
+  kitchen: 4, toys: 3, beauty: 4, sports: 5, furniture: 3, pet: 4, food: 8,
+};
+
+function fmt(n) { return '$' + n.toFixed(2); }
+function fmtPct(n) { return n.toFixed(1) + '%'; }
+
+const calcBtn = document.getElementById('calc-btn');
+const resetBtn = document.getElementById('reset-btn');
+const resultsDiv = document.getElementById('results');
+
+calcBtn.addEventListener('click', function() {
+  const sellPrice = parseFloat(document.getElementById('sell-price').value) || 0;
+  const units = parseInt(document.getElementById('units-month').value) || 1;
+  const country = document.getElementById('country').value;
+  const productCat = document.getElementById('product-cat').value;
+  const productCost = parseFloat(document.getElementById('product-cost').value) || 0;
+  const shippingCost = parseFloat(document.getElementById('shipping-cost').value) || 0;
+  const referralPct = parseFloat(document.getElementById('referral-fee').value) || 15;
+  const fbaFee = parseFloat(document.getElementById('fba-fee').value) || 0;
+  const otherCosts = parseFloat(document.getElementById('other-costs').value) || 0;
+
+  if (!sellPrice || !country || !productCat || !productCost) return;
+
+  // Calculate tariff
+  const tariff = TARIFFS[country];
+  const mfn = MFN_RATES[productCat] || 5;
+  const totalTariffRate = mfn + tariff.s122 + tariff.s301;
+  const customsValue = productCost + shippingCost;
+  const dutyPerUnit = customsValue * (totalTariffRate / 100);
+
+  // Amazon fees
+  const referralFee = sellPrice * (referralPct / 100);
+
+  // Totals
+  const totalCost = productCost + shippingCost + dutyPerUnit + referralFee + fbaFee + otherCosts;
+  const profit = sellPrice - totalCost;
+  const margin = (profit / sellPrice) * 100;
+  const roi = (profit / totalCost) * 100;
+  const monthlyRev = sellPrice * units;
+  const monthlyProfit = profit * units;
+
+  // Display results
+  resultsDiv.classList.add('show');
+  resetBtn.style.display = 'block';
+
+  // Hero
+  const profitEl = document.getElementById('r-profit');
+  profitEl.textContent = fmt(profit);
+  profitEl.className = 'value ' + (margin > 20 ? 'profit-positive' : margin > 0 ? 'profit-warning' : 'profit-negative');
+
+  document.getElementById('r-margin-text').textContent = fmtPct(margin) + ' margin · ' + fmtPct(roi) + ' ROI';
+
+  // Verdict
+  const verdict = document.getElementById('verdict');
+  const vIcon = document.getElementById('v-icon');
+  const vTitle = document.getElementById('v-title');
+  const vDesc = document.getElementById('v-desc');
+
+  if (margin > 30) {
+    verdict.className = 'verdict verdict-good';
+    vIcon.textContent = '🚀';
+    vTitle.textContent = 'Excellent Margin';
+    vDesc.textContent = 'This product has strong profitability. Tariff costs are manageable relative to your selling price.';
+  } else if (margin > 20) {
+    verdict.className = 'verdict verdict-good';
+    vIcon.textContent = '✅';
+    vTitle.textContent = 'Healthy Margin';
+    vDesc.textContent = 'Solid profitability. You have room to absorb PPC costs and price competition.';
+  } else if (margin > 10) {
+    verdict.className = 'verdict verdict-ok';
+    vIcon.textContent = '⚠️';
+    vTitle.textContent = 'Thin Margin — Be Careful';
+    vDesc.textContent = 'This product is profitable but leaves little room for error. PPC costs or tariff increases could wipe out your margin. Consider raising your price or finding a cheaper supplier.';
+  } else if (margin > 0) {
+    verdict.className = 'verdict verdict-ok';
+    vIcon.textContent = '🔶';
+    vTitle.textContent = 'Very Thin Margin';
+    vDesc.textContent = 'You\'re barely profitable. Any increase in costs, tariffs, or competition could push you into losses. Strongly consider sourcing alternatives or a price increase.';
+  } else {
+    verdict.className = 'verdict verdict-bad';
+    vIcon.textContent = '❌';
+    vTitle.textContent = 'Not Profitable';
+    vDesc.textContent = 'This product loses money at current costs and tariff rates. Consider sourcing from a lower-tariff country, negotiating a better FOB price, or increasing your selling price.';
+  }
+
+  // Stacked bar
+  const segments = [
+    { label: 'Product', value: productCost, color: '#3b82f6' },
+    { label: 'Shipping', value: shippingCost, color: '#06b6d4' },
+    { label: 'Tariff', value: dutyPerUnit, color: '#ef4444' },
+    { label: 'Referral', value: referralFee, color: '#f97316' },
+    { label: 'FBA', value: fbaFee, color: '#8b5cf6' },
+    { label: 'Other', value: otherCosts, color: '#6b7280' },
+    { label: 'Profit', value: Math.max(profit, 0), color: '#22c55e' },
+  ].filter(s => s.value > 0);
+
+  const barTotal = segments.reduce((a, s) => a + s.value, 0);
+  document.getElementById('bar-total').textContent = fmt(sellPrice) + ' selling price';
+  document.getElementById('stacked-bar').innerHTML = segments.map(s =>
+    '<div class="seg" style="width:' + (s.value/barTotal*100) + '%;background:' + s.color + ';min-width:' + (s.value > 0 ? '2px' : '0') + '">' + (s.value/barTotal*100 > 8 ? fmt(s.value) : '') + '</div>'
+  ).join('');
+  document.getElementById('bar-legend').innerHTML = segments.map(s =>
+    '<span class="item"><span class="dot" style="background:' + s.color + '"></span>' + s.label + '</span>'
+  ).join('');
+
+  // Breakdown
+  document.getElementById('r-sell').textContent = fmt(sellPrice);
+  document.getElementById('r-cogs').textContent = '-' + fmt(productCost);
+  document.getElementById('r-ship').textContent = '-' + fmt(shippingCost);
+  document.getElementById('r-duty').textContent = '-' + fmt(dutyPerUnit);
+  document.getElementById('r-duty-rate').textContent = fmtPct(totalTariffRate) + ' (' + fmtPct(mfn) + ' MFN + ' + fmtPct(tariff.s122) + ' S122 + ' + fmtPct(tariff.s301) + ' S301)';
+  document.getElementById('r-referral').textContent = '-' + fmt(referralFee);
+  document.getElementById('r-fba').textContent = '-' + fmt(fbaFee);
+  document.getElementById('r-other').textContent = '-' + fmt(otherCosts);
+  document.getElementById('r-total-cost').textContent = fmt(totalCost);
+
+  document.getElementById('r-profit2').textContent = fmt(profit);
+  document.getElementById('r-margin').textContent = fmtPct(margin);
+  document.getElementById('r-roi').textContent = fmtPct(roi);
+  document.getElementById('r-monthly-rev').textContent = fmt(monthlyRev);
+  document.getElementById('r-monthly-profit').textContent = fmt(monthlyProfit);
+
+  var profitRow = document.getElementById('r-profit-row');
+  profitRow.className = profit >= 0 ? 'breakdown-row highlight' : 'breakdown-row loss';
+  var mpRow = document.getElementById('r-monthly-profit-row');
+  mpRow.className = monthlyProfit >= 0 ? 'breakdown-row highlight' : 'breakdown-row loss';
+
+  setTimeout(function() { resultsDiv.scrollIntoView({ behavior: 'smooth', block: 'start' }); }, 100);
+});
+
+resetBtn.addEventListener('click', function() {
+  document.getElementById('sell-price').value = '';
+  document.getElementById('units-month').value = '100';
+  document.getElementById('country').value = '';
+  document.getElementById('product-cat').value = '';
+  document.getElementById('product-cost').value = '';
+  document.getElementById('shipping-cost').value = '';
+  document.getElementById('referral-fee').value = '15';
+  document.getElementById('fba-fee').value = '3.50';
+  document.getElementById('other-costs').value = '0';
+  resultsDiv.classList.remove('show');
+  resetBtn.style.display = 'none';
+});
+</script>
+
+<!-- Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Amazon FBA Profit Margin Calculator With Tariffs",
+  "description": "Free Amazon FBA profit calculator with 2026 US tariff costs built in. Calculate your real margin after import duties, Amazon fees, and shipping.",
+  "url": "https://ustariffcalc.com/fba-profit-calculator.html",
+  "applicationCategory": "BusinessApplication",
+  "operatingSystem": "Web",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  }
+}
+</script>
+
+</body>
+</html>

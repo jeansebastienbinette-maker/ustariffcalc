@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tariff Comparison Calculator — Compare Import Costs by Country (2026)</title>
+<meta name="description" content="Compare US import tariff costs between countries side by side. See which sourcing country gives you the lowest landed cost. Updated 2026 rates.">
+<meta name="google-site-verification" content="YlX6lQqHgEj_Zykv2NSI905c6CftbiLawMNsyyd40hA" />
+<link rel="canonical" href="https://ustariffcalc.com/tariff-comparison-calculator.html">
+<meta property="og:title" content="Tariff Comparison Calculator — Compare Countries 2026">
+<meta property="og:description" content="Compare tariff costs between sourcing countries side by side. Find the lowest cost origin.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://ustariffcalc.com/tariff-comparison-calculator.html">
+<meta property="og:site_name" content="USTariffCalc">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="robots" content="index, follow">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4323376361842642" crossorigin="anonymous"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-5XTG86GVGY"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-5XTG86GVGY');</script>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{min-height:100vh;background:#0a0c12;color:#e2e8f0;font-family:'DM Sans',sans-serif;-webkit-font-smoothing:antialiased}
+.banner{background:linear-gradient(90deg,#7c3aed,#a855f7);padding:10px 16px;text-align:center;color:#fff;font-size:13px;font-weight:700;letter-spacing:.04em}
+.banner a{color:#fff;text-decoration:underline}
+header{padding:48px 24px 32px;text-align:center;max-width:800px;margin:0 auto;background:radial-gradient(ellipse at 50% 0%,rgba(124,58,237,.08) 0%,transparent 70%)}
+.badge{display:inline-block;padding:4px 14px;border-radius:20px;font-size:11px;font-weight:700;background:rgba(168,85,247,.15);color:#c084fc;letter-spacing:.1em;margin-bottom:16px;border:1px solid rgba(168,85,247,.25)}
+h1{font-size:clamp(28px,5vw,46px);font-weight:900;line-height:1.1;margin:0 0 16px;background:linear-gradient(135deg,#fff,#94a3b8);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+header p{color:rgba(255,255,255,.5);font-size:16px;max-width:540px;margin:0 auto;line-height:1.6}
+main{max-width:800px;margin:0 auto;padding:0 20px 80px}
+.card{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:20px;padding:32px 28px;margin-bottom:24px}
+.section-title{font-size:15px;font-weight:800;color:rgba(255,255,255,.5);letter-spacing:.08em;text-transform:uppercase;margin-bottom:18px;padding-bottom:10px;border-bottom:1px solid rgba(255,255,255,.06)}
+.field{display:block;margin-bottom:18px}
+.field-label{font-size:12px;font-weight:700;color:rgba(255,255,255,.4);letter-spacing:.06em;text-transform:uppercase;display:block;margin-bottom:6px}
+.input,.select{width:100%;padding:12px 14px;border-radius:10px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);color:#fff;font-size:15px;outline:none;font-family:'DM Sans',sans-serif}
+.select{cursor:pointer;appearance:none}
+.select option{background:#1a1d2e}
+.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:18px}
+.btn-primary{width:100%;padding:16px 0;border-radius:14px;border:none;background:linear-gradient(135deg,#7c3aed,#a855f7);color:#fff;font-size:16px;font-weight:800;cursor:pointer;font-family:'DM Sans',sans-serif;transition:opacity .2s}
+.btn-primary:hover{opacity:.9}
+.btn-primary:disabled{background:rgba(255,255,255,.1);cursor:not-allowed}
+.results{display:none}
+.results.show{display:block}
+.compare-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:24px}
+.compare-card{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:24px 20px;text-align:center;position:relative}
+.compare-card.winner{border-color:rgba(34,197,94,.4);background:rgba(34,197,94,.05)}
+.winner-badge{position:absolute;top:-10px;left:50%;transform:translateX(-50%);background:#22c55e;color:#fff;font-size:11px;font-weight:800;padding:3px 12px;border-radius:10px;letter-spacing:.05em}
+.compare-card .flag{font-size:36px;margin-bottom:8px}
+.compare-card .country-name{font-size:16px;font-weight:800;color:#fff;margin-bottom:16px}
+.compare-card .total{font-size:36px;font-weight:900;font-family:'JetBrains Mono',monospace;margin-bottom:4px}
+.compare-card.winner .total{color:#22c55e}
+.compare-card .rate-label{font-size:12px;color:rgba(255,255,255,.4);margin-bottom:16px}
+.compare-card .detail{display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid rgba(255,255,255,.04);font-size:13px}
+.compare-card .detail:last-child{border-bottom:none}
+.compare-card .detail .label{color:rgba(255,255,255,.4)}
+.compare-card .detail .val{color:rgba(255,255,255,.6);font-family:'JetBrains Mono',monospace;font-weight:600}
+.savings-box{background:rgba(34,197,94,.08);border:1px solid rgba(34,197,94,.2);border-radius:14px;padding:20px;text-align:center;margin:20px 0}
+.savings-box .amount{font-size:32px;font-weight:900;font-family:'JetBrains Mono',monospace;color:#22c55e}
+.savings-box .label{font-size:14px;color:rgba(255,255,255,.5);margin-top:4px}
+.cta-box{background:linear-gradient(135deg,rgba(249,115,22,.12),rgba(239,68,68,.08));border:1px solid rgba(249,115,22,.25);border-radius:14px;padding:24px;text-align:center;margin:28px 0}
+.cta-box a{display:inline-block;padding:12px 28px;background:linear-gradient(135deg,#f97316,#ef4444);color:#fff;text-decoration:none;border-radius:10px;font-weight:800;font-size:15px}
+.info-section{margin-top:28px;background:rgba(255,255,255,.02);border:1px solid rgba(255,255,255,.06);border-radius:20px;padding:28px 24px}
+.info-section h2{font-size:20px;font-weight:800;color:#fff;margin-bottom:14px}
+.info-section p{font-size:15px;color:rgba(255,255,255,.45);line-height:1.7;margin-bottom:14px}
+.info-section a{color:#f97316}
+footer{text-align:center;margin-top:40px;padding:20px 0}
+footer a{color:rgba(255,255,255,.4);text-decoration:none;margin:0 12px;font-size:13px}
+footer p{font-size:11px;color:rgba(255,255,255,.2);margin-top:12px}
+@media(max-width:600px){.compare-grid{grid-template-columns:1fr}.compare-card .total{font-size:28px}}
+
+/* Global Navigation */
+.global-nav {
+  background: rgba(255,255,255,0.03);
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  padding: 0 24px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+.global-nav-inner {
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 56px;
+}
+.global-nav .logo {
+  font-size: 16px;
+  font-weight: 900;
+  color: #fff;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.global-nav .logo span {
+  color: #f97316;
+}
+.global-nav .nav-links {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+.global-nav .nav-links a {
+  font-size: 13px;
+  font-weight: 600;
+  color: rgba(255,255,255,0.45);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.global-nav .nav-links a:hover {
+  color: #f97316;
+}
+.global-nav .nav-links a.active {
+  color: #f97316;
+}
+.nav-mobile-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: rgba(255,255,255,0.5);
+  font-size: 24px;
+  cursor: pointer;
+}
+@media (max-width: 600px) {
+  .global-nav .nav-links {
+    display: none;
+    position: absolute;
+    top: 56px;
+    left: 0;
+    right: 0;
+    background: #0d0f17;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+    flex-direction: column;
+    padding: 16px 24px;
+    gap: 16px;
+  }
+  .global-nav .nav-links.open {
+    display: flex;
+  }
+  .nav-mobile-toggle {
+    display: block;
+  }
+}
+
+</style>
+</head>
+<body>
+<nav class="global-nav">
+<div class="global-nav-inner">
+<a href="/" class="logo">🧮 USTariff<span>Calc</span></a>
+<button class="nav-mobile-toggle" onclick="document.querySelector('.nav-links').classList.toggle('open')">☰</button>
+<div class="nav-links">
+<a href="/">Tariff Calculator</a>
+<a href="/fba-profit-calculator.html">FBA Profit</a>
+<a href="/landed-cost-calculator.html">Landed Cost</a>
+<a href="/tariff-comparison-calculator.html">Compare Countries</a>
+<a href="/de-minimis-calculator.html">De Minimis</a>
+<a href="/guides.html">Guides</a>
+<a href="/about.html">About</a>
+</div>
+</div>
+</nav>
+<div class="banner">🔢 Need the full tariff breakdown? Use our <a href="/">US Import Tariff Calculator</a></div>
+<header>
+<div class="badge">SIDE-BY-SIDE COMPARISON — 2026 RATES</div>
+<h1>Tariff Comparison<br>Calculator</h1>
+<p>Compare import tariff costs between two countries side by side. Find out which sourcing country gives you the lowest landed cost.</p>
+</header>
+<main>
+<div class="card">
+<div class="section-title">📦 Product Details</div>
+<label class="field">
+<span class="field-label">Product Category</span>
+<select id="tc-product" class="select">
+<option value="">Select category...</option>
+<option value="electronics">Electronics (MFN ~2.5%)</option>
+<option value="clothing">Clothing & Apparel (MFN ~18%)</option>
+<option value="footwear">Footwear (MFN ~15%)</option>
+<option value="consumer">General Consumer Goods (MFN ~5%)</option>
+<option value="kitchen">Kitchen & Home (MFN ~4%)</option>
+<option value="toys">Toys & Games (MFN ~3%)</option>
+<option value="beauty">Beauty & Personal Care (MFN ~4%)</option>
+<option value="sports">Sports & Outdoors (MFN ~5%)</option>
+<option value="furniture">Furniture (MFN ~3%)</option>
+<option value="pet">Pet Supplies (MFN ~4%)</option>
+<option value="food">Food & Agriculture (MFN ~8%)</option>
+<option value="steel">Steel Products (MFN ~3%)</option>
+<option value="aluminum">Aluminum Products (MFN ~3%)</option>
+</select>
+</label>
+<label class="field">
+<span class="field-label">Shipment Value (USD)</span>
+<input type="number" id="tc-value" class="input" min="0" step="0.01" placeholder="25,000">
+</label>
+<div class="section-title" style="margin-top:24px">🌍 Countries to Compare</div>
+<div class="grid-2">
+<label class="field" style="margin-bottom:0">
+<span class="field-label">Country A</span>
+<select id="tc-countryA" class="select">
+<option value="">Select...</option>
+<option value="china" selected>🇨🇳 China</option>
+<option value="vietnam">🇻🇳 Vietnam</option>
+<option value="india">🇮🇳 India</option>
+<option value="thailand">🇹🇭 Thailand</option>
+<option value="indonesia">🇮🇩 Indonesia</option>
+<option value="mexico-usmca">🇲🇽 Mexico (USMCA)</option>
+<option value="mexico-non">🇲🇽 Mexico (Non-USMCA)</option>
+<option value="canada-usmca">🇨🇦 Canada (USMCA)</option>
+<option value="eu">🇪🇺 European Union</option>
+<option value="uk">🇬🇧 United Kingdom</option>
+<option value="japan">🇯🇵 Japan</option>
+<option value="south-korea">🇰🇷 South Korea</option>
+<option value="taiwan">🇹🇼 Taiwan</option>
+<option value="bangladesh">🇧🇩 Bangladesh</option>
+<option value="other">🌍 Other</option>
+</select>
+</label>
+<label class="field" style="margin-bottom:0">
+<span class="field-label">Country B</span>
+<select id="tc-countryB" class="select">
+<option value="">Select...</option>
+<option value="china">🇨🇳 China</option>
+<option value="vietnam" selected>🇻🇳 Vietnam</option>
+<option value="india">🇮🇳 India</option>
+<option value="thailand">🇹🇭 Thailand</option>
+<option value="indonesia">🇮🇩 Indonesia</option>
+<option value="mexico-usmca">🇲🇽 Mexico (USMCA)</option>
+<option value="mexico-non">🇲🇽 Mexico (Non-USMCA)</option>
+<option value="canada-usmca">🇨🇦 Canada (USMCA)</option>
+<option value="eu">🇪🇺 European Union</option>
+<option value="uk">🇬🇧 United Kingdom</option>
+<option value="japan">🇯🇵 Japan</option>
+<option value="south-korea">🇰🇷 South Korea</option>
+<option value="taiwan">🇹🇼 Taiwan</option>
+<option value="bangladesh">🇧🇩 Bangladesh</option>
+<option value="other">🌍 Other</option>
+</select>
+</label>
+</div>
+<button id="tc-calc" class="btn-primary" style="margin-top:10px">Compare Tariff Costs</button>
+</div>
+
+<div id="tc-results" class="results">
+<div id="tc-savings" class="savings-box">
+<p class="amount" id="tc-save-amt">$0</p>
+<p class="label" id="tc-save-text"></p>
+</div>
+<div class="compare-grid">
+<div class="compare-card" id="tc-cardA">
+<div class="flag" id="tc-flagA"></div>
+<div class="country-name" id="tc-nameA"></div>
+<div class="total" id="tc-totalA">$0</div>
+<div class="rate-label" id="tc-rateA"></div>
+<div class="detail"><span class="label">MFN Duty</span><span class="val" id="tc-mfnA"></span></div>
+<div class="detail"><span class="label">Section 122</span><span class="val" id="tc-s122A"></span></div>
+<div class="detail"><span class="label">Section 301</span><span class="val" id="tc-s301A"></span></div>
+<div class="detail"><span class="label">Section 232</span><span class="val" id="tc-s232A"></span></div>
+<div class="detail"><span class="label">Total Duties</span><span class="val" id="tc-dutiesA" style="font-weight:800"></span></div>
+<div class="detail"><span class="label">Landed Cost</span><span class="val" id="tc-landedA" style="font-weight:800"></span></div>
+</div>
+<div class="compare-card" id="tc-cardB">
+<div class="flag" id="tc-flagB"></div>
+<div class="country-name" id="tc-nameB"></div>
+<div class="total" id="tc-totalB">$0</div>
+<div class="rate-label" id="tc-rateB"></div>
+<div class="detail"><span class="label">MFN Duty</span><span class="val" id="tc-mfnB"></span></div>
+<div class="detail"><span class="label">Section 122</span><span class="val" id="tc-s122B"></span></div>
+<div class="detail"><span class="label">Section 301</span><span class="val" id="tc-s301B"></span></div>
+<div class="detail"><span class="label">Section 232</span><span class="val" id="tc-s232B"></span></div>
+<div class="detail"><span class="label">Total Duties</span><span class="val" id="tc-dutiesB" style="font-weight:800"></span></div>
+<div class="detail"><span class="label">Landed Cost</span><span class="val" id="tc-landedB" style="font-weight:800"></span></div>
+</div>
+</div>
+<div class="cta-box">
+<p style="color:#fff;font-weight:700;font-size:16px;margin-bottom:12px">Need the full breakdown for a specific country?</p>
+<a href="/">Full Tariff Calculator →</a>
+</div>
+</div>
+
+<div class="info-section">
+<h2>Why Compare Sourcing Countries?</h2>
+<p>With tariff rates varying by 20-60% between countries, choosing the right sourcing origin can save you thousands on every shipment. China faces the heaviest tariff burden due to Section 301, while USMCA-qualifying goods from Mexico and Canada can avoid the 15% Section 122 surcharge entirely.</p>
+<p>This calculator helps you make data-driven sourcing decisions. Compare any two countries instantly and see exactly where the cost difference comes from — whether it's Section 301, Section 122, or Section 232.</p>
+<p>For strategies on reducing your tariff exposure, read our guide on <a href="/reduce-import-tariffs.html">7 ways to legally reduce import tariffs</a>.</p>
+</div>
+
+
+  <!-- Expert Analysis Section -->
+  <div class="info-section" style="margin-top: 24px;">
+    <h2>The Real Cost of Sourcing Decisions in 2026</h2>
+    <p>I built this comparison tool because I got tired of doing the same math over and over: "If I source from Vietnam instead of China, how much do I actually save?" The answer is always more complex than just comparing tariff percentages, because product costs, shipping rates, minimum order quantities, and lead times all vary by country.</p>
+    <p>The tariff comparison is the starting point, not the full picture. Vietnam might save you 25% in tariffs, but if the FOB price is 15% higher and the shipping is $0.50 more per unit, your actual savings might only be 8-10%. Still significant at scale — but not the 25% you might expect from looking at tariff rates alone.</p>
+    <h3>When to Switch vs. When to Stay</h3>
+    <p>Based on my experience, switching from China makes clear financial sense when the tariff savings exceed the cost premium by at least 10%. If Vietnam is 5% more expensive but saves you 25% in tariffs, that's a clear win. If it's 20% more expensive and saves you 25% in tariffs, the math is much tighter and you need to factor in quality, reliability, and switching costs.</p>
+    <p>The "China Plus One" strategy — maintaining your Chinese supplier while developing an alternative — is the lowest-risk approach. You're not betting everything on a new supplier relationship. You're building optionality. And in a tariff environment that changes every few months, optionality is extremely valuable.</p>
+  </div>
+
+<!-- Guide CTA -->
+<div style="background:rgba(249,115,22,0.06);border:1px solid rgba(249,115,22,0.18);border-radius:20px;padding:28px;display:flex;flex-direction:column;gap:16px;align-items:flex-start;margin-bottom:24px;">
+  <div>
+    <p style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:#f97316;margin-bottom:8px;">PDF Reference Guide</p>
+    <p style="font-size:20px;font-weight:900;color:#fff;margin-bottom:8px;line-height:1.2;">Want the complete picture?</p>
+    <p style="font-size:14px;color:rgba(255,255,255,0.45);line-height:1.6;max-width:460px;">Get the full 2026 US Tariff Guide — all rates, strategies, and deadlines in one 25-page reference.</p>
+  </div>
+  <a href="/tariff-guide.html" style="display:inline-flex;align-items:center;gap:8px;background:#f97316;color:#fff;font-size:14px;font-weight:800;padding:12px 22px;border-radius:10px;text-decoration:none;" onmouseover="this.style.background='#ea6c10'" onmouseout="this.style.background='#f97316'">Get the Guide — $9 →</a>
+</div>
+
+<footer>
+<div><a href="/">Tariff Calculator</a><a href="/about.html">About</a><a href="/privacy.html">Privacy</a><a href="/contact.html">Contact</a></div>
+<p>© 2026 USTariffCalc. All rights reserved.</p>
+</footer>
+</main>
+
+<script>
+var TARIFFS={china:{s122:15,s301:25,flag:'🇨🇳',name:'China'},vietnam:{s122:15,s301:0,flag:'🇻🇳',name:'Vietnam'},india:{s122:15,s301:0,flag:'🇮🇳',name:'India'},thailand:{s122:15,s301:0,flag:'🇹🇭',name:'Thailand'},indonesia:{s122:15,s301:0,flag:'🇮🇩',name:'Indonesia'},'mexico-usmca':{s122:0,s301:0,flag:'🇲🇽',name:'Mexico (USMCA)'},'mexico-non':{s122:15,s301:0,flag:'🇲🇽',name:'Mexico'},'canada-usmca':{s122:0,s301:0,flag:'🇨🇦',name:'Canada (USMCA)'},eu:{s122:15,s301:0,flag:'🇪🇺',name:'EU'},uk:{s122:15,s301:0,flag:'🇬🇧',name:'UK'},japan:{s122:15,s301:0,flag:'🇯🇵',name:'Japan'},'south-korea':{s122:15,s301:0,flag:'🇰🇷',name:'South Korea'},taiwan:{s122:15,s301:0,flag:'🇹🇼',name:'Taiwan'},bangladesh:{s122:15,s301:0,flag:'🇧🇩',name:'Bangladesh'},other:{s122:15,s301:0,flag:'🌍',name:'Other'}};
+var MFN={electronics:2.5,clothing:18,footwear:15,consumer:5,kitchen:4,toys:3,beauty:4,sports:5,furniture:3,pet:4,food:8,steel:3,aluminum:3};
+var S232={steel:50,aluminum:50};
+function fmt(n){if(n>=1e6)return '$'+(n/1e6).toFixed(2)+'M';if(n>=1e4)return '$'+(n/1e3).toFixed(1)+'K';return '$'+n.toFixed(2)}
+function calc(country,product,value){
+var t=TARIFFS[country];var mfn=MFN[product]||5;
+var is232=S232[product];
+var s122=is232?0:t.s122;
+var s301=country==='china'?(is232?25:t.s301):0;
+var s232=is232||0;
+var totalRate=mfn+s122+s301+s232;
+var duties=value*(totalRate/100);
+var mpf=Math.min(Math.max(value*.003464,31.67),614.35);
+var hmf=value*.00125;
+return{mfn:mfn,s122:s122,s301:s301,s232:s232,totalRate:totalRate,duties:duties,mpf:mpf,hmf:hmf,landed:value+duties+mpf+hmf,mfnAmt:value*(mfn/100),s122Amt:value*(s122/100),s301Amt:value*(s301/100),s232Amt:value*(s232/100)};
+}
+document.getElementById('tc-calc').addEventListener('click',function(){
+var product=document.getElementById('tc-product').value;
+var value=parseFloat(document.getElementById('tc-value').value)||0;
+var cA=document.getElementById('tc-countryA').value;
+var cB=document.getElementById('tc-countryB').value;
+if(!product||!value||!cA||!cB)return;
+var a=calc(cA,product,value);var b=calc(cB,product,value);
+var tA=TARIFFS[cA];var tB=TARIFFS[cB];
+document.getElementById('tc-results').classList.add('show');
+var winA=a.landed<=b.landed;
+document.getElementById('tc-cardA').className='compare-card'+(winA?' winner':'');
+document.getElementById('tc-cardB').className='compare-card'+(!winA?' winner':'');
+if(winA){document.getElementById('tc-cardA').innerHTML='<div class="winner-badge">LOWER COST</div>'+document.getElementById('tc-cardA').innerHTML.replace(/<div class="winner-badge">.*?<\/div>/,'')}
+else{document.getElementById('tc-cardB').innerHTML='<div class="winner-badge">LOWER COST</div>'+document.getElementById('tc-cardB').innerHTML.replace(/<div class="winner-badge">.*?<\/div>/,'')}
+document.getElementById('tc-flagA').textContent=tA.flag;
+document.getElementById('tc-nameA').textContent=tA.name;
+document.getElementById('tc-totalA').textContent=a.totalRate.toFixed(1)+'%';
+document.getElementById('tc-rateA').textContent='Effective tariff rate';
+document.getElementById('tc-mfnA').textContent=fmt(a.mfnAmt)+' ('+a.mfn+'%)';
+document.getElementById('tc-s122A').textContent=fmt(a.s122Amt)+' ('+a.s122+'%)';
+document.getElementById('tc-s301A').textContent=fmt(a.s301Amt)+' ('+a.s301+'%)';
+document.getElementById('tc-s232A').textContent=fmt(a.s232Amt)+' ('+a.s232+'%)';
+document.getElementById('tc-dutiesA').textContent=fmt(a.duties);
+document.getElementById('tc-landedA').textContent=fmt(a.landed);
+document.getElementById('tc-flagB').textContent=tB.flag;
+document.getElementById('tc-nameB').textContent=tB.name;
+document.getElementById('tc-totalB').textContent=b.totalRate.toFixed(1)+'%';
+document.getElementById('tc-rateB').textContent='Effective tariff rate';
+document.getElementById('tc-mfnB').textContent=fmt(b.mfnAmt)+' ('+b.mfn+'%)';
+document.getElementById('tc-s122B').textContent=fmt(b.s122Amt)+' ('+b.s122+'%)';
+document.getElementById('tc-s301B').textContent=fmt(b.s301Amt)+' ('+b.s301+'%)';
+document.getElementById('tc-s232B').textContent=fmt(b.s232Amt)+' ('+b.s232+'%)';
+document.getElementById('tc-dutiesB').textContent=fmt(b.duties);
+document.getElementById('tc-landedB').textContent=fmt(b.landed);
+var savings=Math.abs(a.landed-b.landed);
+var savePct=(savings/Math.max(a.landed,b.landed)*100).toFixed(1);
+document.getElementById('tc-save-amt').textContent=fmt(savings);
+var winner=winA?tA.name:tB.name;
+var loser=winA?tB.name:tA.name;
+document.getElementById('tc-save-text').textContent='You save '+savePct+'% by sourcing from '+winner+' instead of '+loser;
+setTimeout(function(){document.getElementById('tc-results').scrollIntoView({behavior:'smooth',block:'start'})},100);
+});
+</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Tariff Comparison Calculator","description":"Compare US import tariff costs between sourcing countries side by side.","url":"https://ustariffcalc.com/tariff-comparison-calculator.html","applicationCategory":"BusinessApplication","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}</script>
+</body>
+</html>
